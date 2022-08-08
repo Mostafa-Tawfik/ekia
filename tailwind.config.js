@@ -8,7 +8,7 @@ module.exports = {
       colors: {
         goldenBrown: '#966F33',
         bdazzledBlue: '#335B96',
-        darkLava: '#504538',
+        fieldDarb: '#665029',
         earthYellow: '#CFA364',
         blanchedAlmond: '#FFECCB',
       },

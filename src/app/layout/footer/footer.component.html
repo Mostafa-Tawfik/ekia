@@ -1,1 +1,38 @@
-<p>footer works!</p>
+<footer class='h-fit z-50 mt-auto'>
+
+  <div class="hidden sm:flex w-full justify-around items-start px-8 py-8 bg-gradient-to-r from-blanchedAlmond to-earthYellow">
+
+    <div class="flex flex-col gap-4" *ngFor="let links of externalLinks">
+      <h3 class="font-bold">{{ links.linksTitle }}</h3>
+      <ul *ngFor="let linkInfo of links.linksInfo">
+        <li>
+          <a [routerLink]="linkInfo.path">{{ linkInfo.title }}</a>          
+        </li>
+      </ul>
+    </div>
+
+    <div class="flex flex-col gap-4">
+      <h3 class="font-bold">Newsletter</h3>
+      <p class="text-base">Subscribe and keep up with our new products</p>
+      <input type="text" placeholder="Enter you email" class="p-4 rounded-lg">
+      <button class="btn-primary w-fit">Subscribe</button>
+    </div>
+  </div>
+
+  <div class="w-full h-24 bg-goldenBrown md:text-2xl">
+    <a 
+      href="https://www.mostafatawfik.com/" 
+      target="_blank" 
+      referrerpolicy="noreferrer" 
+      rel="noopener" 
+      class="w-fit h-full mx-auto flex justify-center items-center gap-2 text-white">
+      <img 
+        class='w-8 h-8 rounded-lg' 
+        alt='myLogo' 
+        src='https://www.mostafatawfik.com/images/logo.jpg'/>  
+        
+      <p class='font-[Redressed]'>Copyright <span class='font-["Mrs_Saint_Delafield"]'>Mostafa Tawfik</span> © 2022</p>
+    </a>
+  </div>
+
+</footer>
