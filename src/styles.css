@@ -15,6 +15,7 @@
     @apply bg-gradient-to-r from-white to-blanchedAlmond h-full w-full;
     font-family: 'Poppins', 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     scroll-behavior: smooth;
+    /* background-image: url('./assets/woodbg.png') */
   }
 
   h1 {
