@@ -10,10 +10,9 @@
   </div>
 
   <div class="hidden sm:flex h-full flex-auto justify-center items-center gap-4 text-lg border-x-[1px] border-blanchedAlmond border-opacity-10">
-    <p class="cursor-pointer">Home</p>
-    <p class="cursor-pointer">Products</p>
-    <p class="cursor-pointer">About EKIA</p>
-    <p class="cursor-pointer">Contact us</p>
+    <button *ngFor="let item of navItems" [routerLink]="item.link" class="">
+      {{ item.title }}
+    </button>
   </div>
 
   <div class="flex-auto h-full flex justify-center items-center">

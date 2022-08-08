@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { faCartShopping, faBars } from '@fortawesome/free-solid-svg-icons'
 
 @Component({
   selector: 'app-header',
@@ -7,6 +6,13 @@ import { faCartShopping, faBars } from '@fortawesome/free-solid-svg-icons'
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+
+  navItems = [
+    { link: '', title: 'Home' },
+    { link: 'products', title: 'Products' },
+    { link: 'about', title: 'About EKIA' },
+    { link: 'contact', title: 'Contact us' },
+  ]
 
   constructor() { }
 
