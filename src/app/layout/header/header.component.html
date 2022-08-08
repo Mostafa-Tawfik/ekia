@@ -1,4 +1,4 @@
-<nav class="w-full h-[110px] fixed flex justify-around sm:relative items-center bg-goldenBrown text-white border-b-2 border-white">
+<nav class="w-full h-[110px] fixed flex justify-around sm:relative items-center bg-goldenBrown text-white border-b-2 border-white z-50">
 
   <div class="flex-auto h-full flex sm:hidden justify-center items-center border-l-[1px] border-blanchedAlmond border-opacity-10">
     <fa-icon icon="bars" size="2x" class="cursor-pointer"></fa-icon>
@@ -10,7 +10,7 @@
   </div>
 
   <div class="hidden sm:flex h-full flex-auto justify-center items-center gap-4 text-lg border-x-[1px] border-blanchedAlmond border-opacity-10">
-    <button *ngFor="let item of navItems" [routerLink]="item.link" class="">
+    <button *ngFor="let item of navItems" [routerLink]="item.link">
       {{ item.title }}
     </button>
   </div>
