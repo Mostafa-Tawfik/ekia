@@ -1,5 +1,5 @@
 # EKIA
-A Furniture E-Commerce app built with Angular.
+A Furniture E-Commerce Angular application that allows users to view a list of available products to purchase, add them to a shopping cart, and ultimately complete the checkout process.
 
 You can visit the live Demo on https://ekia-9249e.web.app/.
 

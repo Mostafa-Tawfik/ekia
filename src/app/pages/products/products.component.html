@@ -1,1 +1,7 @@
-<p class="pt-[110px] sm:pt-0">products works!</p>
+<section class="layout-margin w-full h-full sm:h-[calc(100vh-110px)] flex flex-col sm:flex-row justify-center items-center p-8 pt-[140px] sm:pt-0 backdrop-blur-[2px]">
+
+  <div class="grid grid-cols-1 gap-6 lg:gap-8 sm:grid-cols-2 lg:grid-cols-3 ">
+    <app-product-card *ngFor="let product of products" [item]="product"></app-product-card>
+  </div>
+
+</section>

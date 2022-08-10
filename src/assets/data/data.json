@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "name": "STRANDMON",
+    "price": 1200,
+    "url": "https://i.ibb.co/JpsS6ks/img3.png",
+    "desc": "Give STRANDMON wing chair both a practical and beautiful gift. This cover adds a new and nice look – while protecting the wing chair and making it easy to take care of."
+  },
+  {
+    "id": 2,
+    "name": "LANDSKRONA",
+    "price": 12745,
+    "url": "https://i.ibb.co/9WBXdt1/img4-Small.png",
+    "desc": "Warm and welcoming, neat and stylish. The supporting seat cushions, the cover’s soft finish and the tight fit gives this sofa a perfect balance between its comfort, functions and look."
+  },
+  {
+    "id": 2,
+    "name": "KIVIK",
+    "price": 29995,
+    "url": "https://i.ibb.co/khF2P5f/img8-Small.png",
+    "desc": "Cuddle up in the soft comfort of KIVIK sofa. The generous size, low armrests and pocket springs with foam that adapts to the body invites you and your guests to many hours of socialising and relaxation."
+  }
+]
