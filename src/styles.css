@@ -1,16 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;700&family=Mrs+Saint+Delafield&family=Poppins:wght@200;300;400;500;600;700;800;900&family=Redressed&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mrs+Saint+Delafield&family=Redressed&display=swap');
+
+@import '~@fontsource/inter/500.css';
+@import '~@fontsource/inter/800.css';
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@layer base {
 
+@layer base {
   body {
     @apply bg-gradient-to-r from-white to-blanchedAlmond h-full w-full;
-    font-family: 'Poppins', 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     scroll-behavior: smooth;
-    /* background-image: url('./assets/woodbg.png') */
   }
 
   h1 {
@@ -26,4 +28,8 @@
   .btn-primary {
     @apply bg-goldenBrown text-white font-bold cursor-pointer py-2 px-4 rounded-lg transition hover:contrast-200 hover:-translate-y-1 hover:transition duration-300
   }
+}
+
+.layout-margin {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 md:px-8
 }

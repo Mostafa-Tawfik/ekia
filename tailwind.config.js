@@ -12,6 +12,9 @@ module.exports = {
         earthYellow: '#CFA364',
         blanchedAlmond: '#FFECCB',
       },
+      fontFamily: {
+        poppins: ["Poppins", "sans-serif"],
+      },
     },
   },
   plugins: [],

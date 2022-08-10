@@ -1,21 +1,22 @@
-<footer class='h-fit z-50 mt-auto'>
+<footer class='absolute bottom-0 sm:relative w-full h-fit z-50 mt-auto'>
 
-  <div class="hidden sm:flex w-full justify-around items-start px-8 py-8 bg-gradient-to-r from-blanchedAlmond to-earthYellow">
-
-    <div class="flex flex-col gap-4" *ngFor="let links of externalLinks">
-      <h3 class="font-bold">{{ links.linksTitle }}</h3>
-      <ul *ngFor="let linkInfo of links.linksInfo">
-        <li class="text-sm">
-          <a [routerLink]="linkInfo.path">{{ linkInfo.title }}</a>          
-        </li>
-      </ul>
-    </div>
-
-    <div class="flex flex-col gap-4">
-      <h3 class="font-bold">Newsletter</h3>
-      <p class="text-sm">Subscribe and keep up with our new products</p>
-      <input type="email" placeholder="Enter you email" class="p-4 rounded-lg text-sm">
-      <button class="btn-primary w-fit text-sm">Subscribe</button>
+  <div class="hidden sm:block bg-gradient-to-r from-blanchedAlmond to-earthYellow">
+    <div class="layout-margin sm:flex w-full justify-around items-start px-8 py-8 text-xs lg:text-sm">  
+      <div class="flex flex-col gap-4" *ngFor="let links of externalLinks">
+        <h3 class="font-bold text-base">{{ links.linksTitle }}</h3>
+        <ul *ngFor="let linkInfo of links.linksInfo">
+          <li>
+            <a [routerLink]="linkInfo.path">{{ linkInfo.title }}</a>          
+          </li>
+        </ul>
+      </div>
+  
+      <div class="flex flex-col gap-4">
+        <h3 class="font-bold text-base">Newsletter</h3>
+        <p>Subscribe and keep up with our new products</p>
+        <input type="email" placeholder="Enter you email" class="p-4 rounded-lg">
+        <button class="btn-primary w-fit">Subscribe</button>
+      </div>
     </div>
   </div>
 
@@ -34,5 +35,6 @@
       <p class='font-[Redressed]'>Copyright <span class='font-["Mrs_Saint_Delafield"]'>Mostafa Tawfik</span> © 2022</p>
     </a>
   </div>
+
 
 </footer>
