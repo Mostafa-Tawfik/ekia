@@ -5,13 +5,15 @@ import { AppRoutingModule } from '../app-routing.module';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { SharedModule } from '../shared/shared.module';
+import { MobileNavComponent } from './mobile-nav/mobile-nav.component';
 
 
 
 @NgModule({
   declarations: [
     FooterComponent,
-    HeaderComponent
+    HeaderComponent,
+    MobileNavComponent
   ],
   imports: [
     CommonModule,
@@ -20,7 +22,8 @@ import { SharedModule } from '../shared/shared.module';
   ],
   exports: [
     FooterComponent,
-    HeaderComponent
+    HeaderComponent,
+    MobileNavComponent
   ]
 })
 export class LayoutModule {}

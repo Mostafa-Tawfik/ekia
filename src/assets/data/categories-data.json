@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "name": "Chairs",
+    "img": "https://images.unsplash.com/photo-1612731397462-d6c4f17cbb3e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=784&q=80",
+    "desc": "Come in and take a seat! To make it easy to find the chairs your home needs, we've collected them here. Buy our chairs online."
+  },
+  {
+    "id": 2,
+    "name": "Sofas",
+    "img": "https://images.unsplash.com/photo-1491926626787-62db157af940?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+    "desc": "Fancying some cozy time in a new sofa? find a wide range of modern sofa and traditional styled sofa, at an affordable price."
+  },
+  {
+    "id": 3,
+    "name": "Beds",
+    "img": "https://images.unsplash.com/photo-1615874959474-d609969a20ed?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1160&q=80",
+    "desc": "A double bed with a headboard creates an inviting centrepiece at the heart of your room. Try a textile headboard for all-round warmth, or solid wood for timeless style. Pick and mix your favourite bed linen to create your dream space for sleeping, lounging and long-lie-ins."
+  }
+]

@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "ekia-9249e"
+  },
+  "targets": {
+    "ekia-9249e": {
+      "hosting": {
+        "ekia": [
+          "ekia-9249e"
+        ]
+      }
+    }
   }
 }

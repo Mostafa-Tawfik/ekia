@@ -10,6 +10,10 @@ export class DataService {
   constructor(private http: HttpClient) { }
 
   getProducts(): Observable<[]> {
-    return this.http.get<[]>('assets/data/data.json')
+    return this.http.get<[]>('assets/data/products-data.json')
+  }
+
+  getCategories(): Observable<[]> {
+    return this.http.get<[]>('assets/data/categories-data.json')
   }
 }

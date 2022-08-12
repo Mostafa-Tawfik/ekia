@@ -21,7 +21,7 @@ export class FontAwesomeLibraryModule {
     laibrary.addIcons(
       faCartShopping,
       faBars,
-      faCouch
+      faCouch,
     )
   }
  }

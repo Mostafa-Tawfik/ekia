@@ -9,10 +9,13 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply bg-gradient-to-r from-white to-blanchedAlmond h-full w-full;
     font-family: 'inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    scroll-behavior: smooth;
   }
 
   h1 {

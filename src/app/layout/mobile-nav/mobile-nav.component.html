@@ -1,0 +1,23 @@
+<div class="sm:hidden fixed bottom-0 w-full h-24 bg-gradient-to-r from-goldenBrown to-fieldDarb px-6 rounded-t-3xl">
+  <ul class="w-80 relative flex mx-auto">
+
+    <span class="bg-bdazzledBlue duration-500 {{mobileNavItems[active].dis}} border-y-2 border-blanchedAlmond h-[70px] w-[70px] absolute -top-4 -left-1 rounded-full">
+    </span>
+
+    <li *ngFor="let navItem of mobileNavItems; index as i" class="w-16 h-16">
+      <div [routerLink]="navItem.path" (click)="setActive(i)" class="flex flex-col text-center pt-6 text-blanchedAlmond">
+
+        <span class='text-xl cursor-pointer duration-500 z-50 {{
+            i === active && "-mt-6"
+          }}'>
+          <fa-icon [icon]="navItem.icon" size="2x" class="cursor-pointer"></fa-icon>
+        </span>
+        
+        <span [ngClass]="active === i ? 'translate-y-3 duration-700 opacity-100' : 'opacity-0 translate-y-10'">
+          {{ navItem.name }}
+        </span>
+
+      </div>
+    </li>
+  </ul>
+</div>

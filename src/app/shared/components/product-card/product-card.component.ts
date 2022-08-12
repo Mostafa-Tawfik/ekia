@@ -13,8 +13,9 @@ export class ProductCardComponent implements OnInit {
     this.item = {
       id: 1,
       name: '',
+      category: '',
       price: 0,
-      url: '',
+      img: '',
       desc: ''
     }
   }

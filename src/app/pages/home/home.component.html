@@ -1,1 +1,6 @@
 <app-home-hero></app-home-hero>
+
+<div class="flex flex-col sm:flex-row justify-center items-center gap-4 py-16">
+  <app-home-categories *ngFor="let category of categories" [category]="category">
+  </app-home-categories>
+</div>
