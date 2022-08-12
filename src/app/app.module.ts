@@ -12,6 +12,8 @@ import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 
 import { LayoutModule } from './layout/layout.module';
 import { PagesModule } from './pages/pages.module';
+import { CoreModule } from './core/core.module';
+import { AccountModule } from './pages/account/account.module';
 
 
 @NgModule({
@@ -24,9 +26,11 @@ import { PagesModule } from './pages/pages.module';
     HttpClientModule,
     LayoutModule,
     PagesModule,
+    CoreModule,
+    AccountModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
-    provideFirestore(() => getFirestore())
+    provideFirestore(() => getFirestore()),
   ],
   providers: [],
   bootstrap: [AppComponent]

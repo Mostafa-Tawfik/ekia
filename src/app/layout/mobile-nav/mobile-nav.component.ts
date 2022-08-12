@@ -12,7 +12,7 @@ export class MobileNavComponent implements OnInit {
     { name: "Home", icon: faHouse, dis: "translate-x-0", path: '' },
     { name: "Products", icon: faCouch, dis: "translate-x-16", path: '/products' },
     { name: "Search", icon: faMagnifyingGlass, dis: "translate-x-32", path: '' },
-    { name: "Account", icon: faUser, dis: "translate-x-48", path: '' },
+    { name: "Account", icon: faUser, dis: "translate-x-48", path: '/signin' },
     { name: "Settings", icon: faGear, dis: "translate-x-64", path: '' },
   ]
 
