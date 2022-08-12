@@ -7,6 +7,7 @@ import { HomeModule } from './home/home.module';
 import { ProductsModule } from './products/products.module';
 import { AboutModule } from './about/about.module';
 import { ContactModule } from './contact/contact.module';
+import { AccountModule } from './account/account.module';
 
 
 
@@ -21,6 +22,7 @@ import { ContactModule } from './contact/contact.module';
     ProductsModule,
     AboutModule,
     ContactModule,
+    AccountModule
   ],
   exports: [
     HomeModule,

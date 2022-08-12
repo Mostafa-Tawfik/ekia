@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/core/services/auth.service';
+import { LocalStorageService } from 'src/app/core/services/local-storage.service';
 
 @Component({
   selector: 'app-header',
@@ -14,8 +16,15 @@ export class HeaderComponent implements OnInit {
     { link: 'contact', title: 'Contact us' },
   ]
 
-  constructor() { }
+  currentUser: any = {}
+
+  constructor(
+    public auth: AuthService, 
+    private localStorage: LocalStorageService
+  ) { }
 
   ngOnInit(): void {
+    this.currentUser = this.localStorage.getLocalStorage('auth', {})
+    console.log(this.currentUser);
   }
 }

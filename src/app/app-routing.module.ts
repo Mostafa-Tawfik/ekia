@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AccountGuard } from './core/guards/account.guard';
+import { SignGuard } from './core/guards/sign.guard';
 import { SigninComponent } from './core/signin/signin.component';
 import { SignupComponent } from './core/signup/signup.component';
 import { AboutComponent } from './pages/about/about.component';
@@ -27,20 +29,24 @@ const routes: Routes = [
   },
   {
     path: 'signin',
-    component: SigninComponent
+    component: SigninComponent,
+    canActivate: [SignGuard]
   },
   {
     path: 'signup',
-    component: SignupComponent
+    component: SignupComponent,
+    canActivate: [SignGuard]
   },
   {
     path: 'account',
-    component: AccountComponent
+    component: AccountComponent,
+    canActivate: [AccountGuard]
   },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, {
+    // scroll to top
     scrollPositionRestoration: 'enabled'
   })],
   exports: [RouterModule]

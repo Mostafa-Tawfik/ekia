@@ -10,18 +10,25 @@ import {
   GoogleAuthProvider,
   signInWithPopup,
 } from '@angular/fire/auth'
+import { LocalStorageService } from './local-storage.service'
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  currentUser: any = {}
+  public currentUser: any = {}
 
-  constructor(public auth: Auth, private router: Router) { }
+  constructor(public auth: Auth, private router: Router, private localStorage: LocalStorageService) { }
+
+  getUser() {
+    return this.currentUser
+  }
 
   checkUser() {
-    onAuthStateChanged(this.auth, user => this.currentUser = user)
+    const unsubscribe = onAuthStateChanged(this.auth, user => this.currentUser = user)
+
+    return () => unsubscribe()
   }
 
   // checkUser() {
@@ -37,6 +44,7 @@ export class AuthService {
     signInWithEmailAndPassword(this.auth, email, password)
     .then(res => {
       console.log(res.user)
+      this.localStorage.setLocalStorage('auth', res.user)
       this.router.navigate([''])
     })
     .catch(err => alert(err.message))
@@ -62,6 +70,9 @@ export class AuthService {
   }
 
   signOut() {
-    return signOut(this.auth)
+    signOut(this.auth)
+    localStorage.clear()
+    this.router.navigate([''])
+    setTimeout(()=> window.location.reload(), 1200)
   }
 }
