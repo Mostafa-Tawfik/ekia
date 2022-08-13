@@ -15,7 +15,6 @@ export class SigninComponent implements OnInit {
   constructor(private auth: AuthService) { }
 
   ngOnInit(): void {
-    console.log(this.auth.currentUser)
   }
 
   signInWithGoogle() {

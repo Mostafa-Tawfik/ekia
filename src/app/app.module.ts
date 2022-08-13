@@ -15,6 +15,8 @@ import { PagesModule } from './pages/pages.module';
 import { CoreModule } from './core/core.module';
 import { AccountModule } from './pages/account/account.module';
 
+import { PERSISTENCE } from '@angular/fire/compat/auth';
+
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { AccountModule } from './pages/account/account.module';
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
   ],
-  providers: [],
+  providers: [
+    { provide: PERSISTENCE, useValue: 'session' },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { 

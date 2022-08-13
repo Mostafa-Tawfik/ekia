@@ -1,78 +1,75 @@
 import { Injectable } from '@angular/core'
 import { Router } from '@angular/router'
+
+import { LocalStorageService } from './local-storage.service'
 import {
   Auth,
-  getAuth,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   signOut,
-  onAuthStateChanged,
   GoogleAuthProvider,
   signInWithPopup,
 } from '@angular/fire/auth'
-import { LocalStorageService } from './local-storage.service'
+import { FirestoreService } from './firestore.service'
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
+  
+  constructor(
+    public auth: Auth,
+    private router: Router,
+    private localStorage: LocalStorageService,
+    public firestore: FirestoreService
+    ) {}
+    
+  currentUser: any = {}
 
-  public currentUser: any = {}
-
-  constructor(public auth: Auth, private router: Router, private localStorage: LocalStorageService) { }
-
-  getUser() {
-    return this.currentUser
+  // store user data into local storage
+  saveUserData(data: any) {
+    this.localStorage.setLocalStorage('auth', data)
+    return this.currentUser = this.localStorage.getLocalStorage('auth', data)
   }
 
-  checkUser() {
-    const unsubscribe = onAuthStateChanged(this.auth, user => this.currentUser = user)
-
-    return () => unsubscribe()
-  }
-
-  // checkUser() {
-  //   const auth = getAuth()
-  //   const user = auth.currentUser
-
-  //   user 
-  //   ? this.currentUser = user
-  //   : console.log('no user')
-  // }
-
+  // sign in with email and password
   signIn(email : string, password : string) {
     signInWithEmailAndPassword(this.auth, email, password)
     .then(res => {
-      console.log(res.user)
-      this.localStorage.setLocalStorage('auth', res.user)
+      this.saveUserData(res.user)
       this.router.navigate([''])
     })
     .catch(err => alert(err.message))
   }
 
+  // sign in with google account
   signInWithGoogle() {
     const provider = new GoogleAuthProvider()
     signInWithPopup(this.auth, provider)
     .then(res => {
-      console.log(res.user)
+      this.saveUserData(res.user)
+      this.firestore.createDoc(res.user.email)
       this.router.navigate([''])
     })
     .catch(err => alert(err.message))
   }
 
+  // sign up with email and password
   signUp(email : string, password : string) {
     createUserWithEmailAndPassword(this.auth, email, password)
     .then(res => {
-      console.log(res.user)
+      this.saveUserData(res.user)
+      this.firestore.createDoc(res.user.email)
       this.router.navigate([''])
     })
     .catch(err => alert(err.message))
   }
 
+  // sign out
   signOut() {
     signOut(this.auth)
     localStorage.clear()
     this.router.navigate([''])
-    setTimeout(()=> window.location.reload(), 1200)
+    // setTimeout(()=> window.location.reload(), 1200)
   }
 }
