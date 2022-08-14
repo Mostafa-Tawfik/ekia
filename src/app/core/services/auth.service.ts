@@ -24,7 +24,8 @@ export class AuthService {
     public firestore: FirestoreService
     ) {}
     
-  currentUser: any = {}
+    // init the user by checking on local storage
+  currentUser: any = this.localStorage.getLocalStorage('auth', {})
 
   // store user data into local storage
   saveUserData(data: any) {

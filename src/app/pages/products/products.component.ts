@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
-import { DataService } from 'src/app/services/data.service';
 import { Product } from 'src/app/models/product';
+import { doc, Firestore, onSnapshot } from '@angular/fire/firestore';
+import { FirestoreService } from 'src/app/core/services/firestore.service';
 
 @Component({
   selector: 'app-products',
@@ -11,11 +12,21 @@ import { Product } from 'src/app/models/product';
 export class ProductsComponent implements OnInit {
   products: Product[] = []
 
-  constructor(private httpService: DataService) { }
+  constructor(
+    public fs: Firestore,
+    public firestoreService: FirestoreService
+    ) { }
 
   ngOnInit(): void {
-    this.httpService.getProducts().subscribe(data=> {
-      this.products = data
-    })
+    const docRef = doc(this.fs, 'admin', 'products')
+
+    onSnapshot(docRef, (doc) => {
+      if(doc.exists()) {
+        this.products = doc.data()?.['products']
+        return this.products
+      } else {
+        return console.log('Document not found');
+      }
+    }) 
   }
 }

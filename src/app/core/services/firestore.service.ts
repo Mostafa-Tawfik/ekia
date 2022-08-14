@@ -8,7 +8,8 @@ export class FirestoreService {
 
   constructor(
     public fs: Firestore,
-  ) { }
+  ) {}
+
 
   // setup new document for current user using his email
   createDoc(email : any) {
@@ -20,4 +21,5 @@ export class FirestoreService {
     .then(()=>console.log('Doc Created!'))
     .catch(err => console.log(err.message))
   }
+
 }
