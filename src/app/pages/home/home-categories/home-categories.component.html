@@ -1,6 +1,6 @@
-<a [routerLink]=category.path class="flex flex-col sm:flex-row items-center justify-center gap-4">
+<section class="flex flex-col sm:flex-row items-center justify-center gap-4">
 
-  <div class="w-full flex justify-center items-center gap-8">
+  <div class="w-full flex flex-col lg:flex-row justify-center items-center gap-8">
     
     <img 
       src="{{imgBaseUrl}}/w_600/{{category.img}}" 
@@ -13,11 +13,11 @@
         {{ category.name }}
       </h3>
   
-      <article class="sm:w-1/2">
+      <article class="lg:w-1/2">
         <p>{{ category.desc }}</p>
       </article>
     </div>
     
   </div>
     
-</a>
+</section>
