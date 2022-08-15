@@ -9,6 +9,7 @@ import { AboutComponent } from './pages/about/about.component';
 import { AccountComponent } from './pages/account/account.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { HomeComponent } from './pages/home/home.component';
+import { ProductDetailsComponent } from './pages/products/product-details/product-details.component';
 import { ProductsComponent } from './pages/products/products.component';
 
 const routes: Routes = [
@@ -19,6 +20,10 @@ const routes: Routes = [
   {
     path: 'products',
     component: ProductsComponent
+  },
+  {
+    path: 'products/:id',
+    component: ProductDetailsComponent
   },
   {
     path: 'about',

@@ -55,7 +55,7 @@ export class AuthService {
     .catch(err => alert(err.message))
   }
 
-  // sign up with email and password
+  // sign up with email and password then create a user doc on firebase
   signUp(email : string, password : string) {
     createUserWithEmailAndPassword(this.auth, email, password)
     .then(res => {

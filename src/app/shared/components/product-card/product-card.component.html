@@ -1,7 +1,7 @@
-<div class="w-72 h-96 bg-gradient-to-r from-blanchedAlmond to-earthYellow/20 p-4 flex flex-col items-center justify-center rounded-2xl cursor-pointer">
+<a [routerLink]="['/products', item.id]" class="w-72 h-96 bg-gradient-to-r from-blanchedAlmond to-earthYellow/20 p-4 flex flex-col items-center justify-center rounded-2xl cursor-pointer">
   <img [src]="item.img" [alt]="item.name" class="w-60 h-80 object-contain">
   <div>
     <h3 class="text-bdazzledBlue font-extrabold">{{ item.name }}</h3>
     <p class="text-sm">EGP {{ item.price }}</p>
   </div>
-</div>
+</a>
