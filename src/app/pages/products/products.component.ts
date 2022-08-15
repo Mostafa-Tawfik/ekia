@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-
 import { FirestoreService } from 'src/app/core/services/firestore.service';
+import { Category } from 'src/app/models/category';
+
 import { Product } from 'src/app/models/product';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-products',
@@ -10,12 +12,17 @@ import { Product } from 'src/app/models/product';
 })
 export class ProductsComponent implements OnInit {
   products: Product[] = []
+  categories: Category[] = []
 
   constructor(
-    public fss: FirestoreService
+    public fss: FirestoreService,
+    private httpService: DataService
     ) {}
 
   ngOnInit(): void {
     this.fss.getAllProducts(this.products)
+    this.httpService.getCategories().subscribe(data => {
+      this.categories = data
+    }) 
   }
 }

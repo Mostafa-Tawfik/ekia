@@ -13,6 +13,8 @@ export class HomeCategoriesComponent implements OnInit {
     this.category = {
       id: 1,
       name: '',
+      path: '',
+      logo: '',
       img: '',
       desc: ''
     }
@@ -20,5 +22,9 @@ export class HomeCategoriesComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  // images uses cloudinary as an img cdn to optimize imgs
+  // usage src='imgBaseUrl/width/item.img'
+  imgBaseUrl: string = 'https://res.cloudinary.com/do1rqqi7v/image/upload/'
 
 }

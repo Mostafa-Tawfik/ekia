@@ -5,6 +5,7 @@ import { ProductsComponent } from './products.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { AppRoutingModule } from 'src/app/app-routing.module';
+import { ProductCardComponent } from './product-card/product-card.component';
 
 
 
@@ -12,6 +13,7 @@ import { AppRoutingModule } from 'src/app/app-routing.module';
   declarations: [
     ProductsComponent,
     ProductDetailsComponent,
+    ProductCardComponent
   ],
   imports: [
     CommonModule,
@@ -20,7 +22,8 @@ import { AppRoutingModule } from 'src/app/app-routing.module';
   ],
   exports: [
     ProductsComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    ProductCardComponent
   ]
 })
 export class ProductsModule { }

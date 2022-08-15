@@ -4,5 +4,7 @@ export class Category {
     public name: string, 
     public img: string,
     public desc: string,
+    public path: string,
+    public logo: string,
   ) {}
 }

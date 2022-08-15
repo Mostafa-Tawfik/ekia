@@ -23,4 +23,8 @@ export class ProductCardComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  // images uses cloudinary as an img cdn to optimize imgs
+  // usage src='imgBaseUrl/width/item.img'
+  imgBaseUrl: string = 'https://res.cloudinary.com/do1rqqi7v/image/upload/'
+
 }
