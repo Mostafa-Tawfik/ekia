@@ -4,7 +4,7 @@
     "name": "STRANDMON",
     "category": "chairs",
     "price": 1200,
-    "img": "https://i.ibb.co/JpsS6ks/img3.png",
+    "img": "v1660573041/Projects/EKIA/img3_ak4oxi.png",
     "desc": "Give STRANDMON wing chair both a practical and beautiful gift. This cover adds a new and nice look – while protecting the wing chair and making it easy to take care of."
   },
   {
@@ -12,7 +12,7 @@
     "name": "LANDSKRONA",
     "category": "sofas",
     "price": 12745,
-    "img": "https://i.ibb.co/9WBXdt1/img4-Small.png",
+    "img": "v1660573087/Projects/EKIA/img4-Small_c4ro9p.png",
     "desc": "Warm and welcoming, neat and stylish. The supporting seat cushions, the cover’s soft finish and the tight fit gives this sofa a perfect balance between its comfort, functions and look."
   },
   {
@@ -20,7 +20,31 @@
     "name": "KIVIK",
     "category": "sofas",
     "price": 29995,
-    "img": "https://i.ibb.co/khF2P5f/img8-Small.png",
+    "img": "v1660573083/Projects/EKIA/img8-Small_u425xd.png",
     "desc": "Cuddle up in the soft comfort of KIVIK sofa. The generous size, low armrests and pocket springs with foam that adapts to the body invites you and your guests to many hours of socialising and relaxation."
+  },
+  {
+    "id": 4,
+    "name": "VRETSTORP",
+    "category": "sofas",
+    "price": 4000,
+    "img": "v1660422024/Projects/EKIA/img6-1_fn1rn2.png",
+    "desc": "A new cover is a great way to extend the life of your favourite sofa and revitalise your home – for a new season or a special occasion. You also make a sustainable choice by freshening up and reusing!"
+  },
+  {
+    "id": 5,
+    "name": "ADDE",
+    "category": "chairs",
+    "price": 900,
+    "img": "v1660423498/Projects/EKIA/img7-1_ulmyrt.png",
+    "desc": "Light, airy and stackable ADDE is easy to store away when you want to clean, dance or just need a little more floor space. It is also the perfect extra chair when you have more guests around the table."
+  },
+  {
+    "id": 6,
+    "name": "LACK",
+    "category": "tables",
+    "price": 350,
+    "img": "v1660423709/Projects/EKIA/img13-1_thycjd.png",
+    "desc": "A loyal friend that’s been in our range since 1979. With tender loving care we’ve made it even better. It’s easy to assemble, lift and move around. We’ve kept the prices down, so your spirits go up."
   }
 ]

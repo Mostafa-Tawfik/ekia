@@ -20,9 +20,12 @@ export class ProductsComponent implements OnInit {
     ) {}
 
   ngOnInit(): void {
-    this.fss.getAllProducts(this.products)
+    this.httpService.getProducts().subscribe(data => {
+      this.products = data
+    }) 
     this.httpService.getCategories().subscribe(data => {
       this.categories = data
-    }) 
+    })
+
   }
 }

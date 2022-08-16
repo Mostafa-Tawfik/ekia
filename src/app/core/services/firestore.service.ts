@@ -28,13 +28,13 @@ export class FirestoreService {
     return getDoc(productRef).then(doc => doc.data())
   }
 
-  // get all products
-  async getAllProducts(products: any[]): Promise<any> {
-    const docRef = collection(this.db, 'products')
+  // // get all products
+  // async getAllProducts(products: any[]): Promise<any> {
+  //   const docRef = collection(this.db, 'products')
 
-    const querySnapshot = await getDocs(docRef)
-    querySnapshot.forEach((doc) => {
-      return products.push(doc.data())
-    })
-  }
+  //   const querySnapshot = await getDocs(docRef)
+  //   querySnapshot.forEach((doc) => {
+  //     return products.push(doc.data())
+  //   })
+  // }
 }

@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Observable } from 'rxjs';
-import { FirestoreService } from 'src/app/core/services/firestore.service';
+// import { Observable } from 'rxjs';
+// import { FirestoreService } from 'src/app/core/services/firestore.service';
 
 import { Product } from 'src/app/models/product';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-product-details',
@@ -13,23 +14,35 @@ import { Product } from 'src/app/models/product';
 export class ProductDetailsComponent implements OnInit {
   
   // set Observable to watch the fetched product
-  product: Observable<Product>
-  nextProduct: Observable<Product>
+  product: Product
+  // nextProduct: Observable<Product>
 
   // assign param id to a variable
-  paramId: string = this.route.snapshot.paramMap.get('id')!
+  paramId: number = +this.route.snapshot.paramMap.get('id')!
   nextParamId: string = (+this.paramId+1).toString() 
 
   
   constructor(
     private route: ActivatedRoute,
-    private fss: FirestoreService
+    // private fss: FirestoreService,
+    private httpService: DataService,
     ) {
-      this.product = this.fss.getProduct(this.paramId)   
-      this.nextProduct = this.fss.getProduct(this.nextParamId)   
+      this.product= {
+        id: 0,
+        name: '',
+        category: '',
+        price: 0,
+        img: '',
+        desc: ''
+      }
+      // this.product = this.fss.getProduct(this.paramId)   
+      // this.nextProduct = this.fss.getProduct(this.nextParamId)   
     }
     
   ngOnInit(): void {
+    this.httpService.getProductById(this.paramId).subscribe(data => {
+      this.product = data[0]
+    }) 
   }
 
   // images uses cloudinary as an img cdn to optimize imgs
