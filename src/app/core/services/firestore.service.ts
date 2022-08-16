@@ -22,11 +22,11 @@ export class FirestoreService {
     .catch(err => console.log(err.message))
   }
 
-  // get a single product by id
-  getProduct(id: string): any {
-    const productRef = doc(this.db, 'products', id)
-    return getDoc(productRef).then(doc => doc.data())
-  }
+  // // get a single product by id
+  // getProduct(id: string): any {
+  //   const productRef = doc(this.db, 'products', id)
+  //   return getDoc(productRef).then(doc => doc.data())
+  // }
 
   // // get all products
   // async getAllProducts(products: any[]): Promise<any> {

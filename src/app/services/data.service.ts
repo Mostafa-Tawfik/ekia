@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { filter, map, Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Product } from '../models/product';
 import { Category } from '../models/category';
@@ -11,6 +11,7 @@ export class DataService {
 
   constructor(private http: HttpClient) { }
 
+  // get product by id
   getProductById(id: number): Observable<Product[]> {
     return this.http
     // get the data form data.json
@@ -21,11 +22,22 @@ export class DataService {
     }))
   }
 
+  // fetch all products
   getProducts(): Observable<Product[]> {
     return this.http.get<[]>('assets/data/products-data.json')
   }
 
+  // fetch all categories
   getCategories(): Observable<Category[]> {
     return this.http.get<[]>('assets/data/categories-data.json')
+  }
+
+  // filter products by category
+  filterProductsByCategory(category: string): Observable<Product[]> {
+    return this.http
+    .get<Product[]>('assets/data/products-data.json')
+    .pipe(map(res => {
+      return res.filter((item: Product) => item.category == category)
+    }))
   }
 }

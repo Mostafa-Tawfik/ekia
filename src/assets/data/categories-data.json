@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "name": "Chairs",
+    "name": "chairs",
     "path": "",
     "logo": "https://api.iconify.design/noto/chair.svg",
     "img": "v1660586420/Projects/EKIA/image-from-rawpixel-id-3283432-jpeg_wogqxu.jpg",
@@ -9,7 +9,7 @@
   },
   {
     "id": 2,
-    "name": "Sofas",
+    "name": "sofas",
     "path": "",
     "logo": "https://api.iconify.design/emojione-v1/couch-and-lamp.svg",
     "img": "v1660588102/Projects/EKIA/image-from-rawpixel-id-3284496-jpeg_1_ul1a6t.jpg",
@@ -17,15 +17,15 @@
   },
   {
     "id": 3,
-    "name": "Tables",
+    "name": "tables",
     "path": "",
-    "logo": "https://cdn-icons.flaticon.com/png/512/2355/premium/2355402.png?token=exp=1660581607~hmac=9bd1021848f204a75b6a0690a0c2c3c3",
+    "logo": "https://res.cloudinary.com/do1rqqi7v/image/upload/v1660621443/Projects/EKIA/7150142_table_wood_furniture_interior_room_icon_lziezq.svg",
     "img": "v1660586712/Projects/EKIA/image-from-rawpixel-id-5965354-jpeg_m7fwjy.jpg",
     "desc": "A double bed with a headboard creates an inviting centrepiece at the heart of your room. Try a textile headboard for all-round warmth, or solid wood for timeless style. Pick and mix your favourite bed linen to create your dream space for sleeping, lounging and long-lie-ins."
   },
   {
     "id": 4,
-    "name": "Beds",
+    "name": "beds",
     "path": "",
     "logo": "https://api.iconify.design/emojione/bed.svg",
     "img": "v1660586702/Projects/EKIA/image-from-rawpixel-id-5924372-jpeg_cjcyuq.jpg",

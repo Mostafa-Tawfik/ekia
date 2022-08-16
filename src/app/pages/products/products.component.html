@@ -8,12 +8,13 @@
     </div>
 
     <div class="grid grid-cols-4 gap-6">
-      <div 
+      <button 
         *ngFor="let category of categories"
+        (click)="filterProducts(category.name)"
         class="h-32 flex flex-col items-center justify-center bg-blanchedAlmond/30 border-2 border-fieldDarb/10 py-2 cursor-pointer">
         <img [src]= category.logo alt="chair" class="h-32 w-20">
         <h3 class="font-extrabold text-bdazzledBlue">{{ category.name }}</h3>
-      </div>
+      </button>
     </div>
 
   </div>
