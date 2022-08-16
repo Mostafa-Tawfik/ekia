@@ -14,6 +14,9 @@ export class ProductsComponent implements OnInit {
   products: Product[] = []
   categories: Category[] = []
 
+  // control which category is active
+  cateoryActivated: string = ''
+
   constructor(
     public fss: FirestoreService,
     private httpService: DataService
@@ -32,5 +35,6 @@ export class ProductsComponent implements OnInit {
     this.httpService.filterProductsByCategory(category).subscribe(data => {
       this.products = data
     })
+    this.cateoryActivated = category
   }
 }
