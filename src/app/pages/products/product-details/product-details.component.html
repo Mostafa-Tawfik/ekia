@@ -1,3 +1,41 @@
-<section class="layout-margin w-full h-full sm:min-h-[calc(100vh-110px)] flex flex-col justify-center items-center p-8 pt-[140px] backdrop-blur-[2px]">
-  {{ (product | async)?.name }}
+<section 
+  class="layout-margin relative w-full h-full sm:min-h-[calc(100vh-110px)] flex flex-col justify-center items-center p-8 pt-[140px] sm:pt-8 backdrop-blur-[2px]">
+
+  <div class="w-full h-full flex flex-col sm:flex-row justify-center items-center gap-8">
+    <div class="sm:w-1/4 flex flex-col gap-4">
+      <h2 class="text-5xl font-extrabold text-bdazzledBlue">
+        {{(product|async)?.name}}
+      </h2>
+
+      <p class="-mt-2">{{(product|async)?.category}}</p>
+
+      <hr class="h-[3px] bg-bdazzledBlue">
+
+      <p>{{(product|async)?.desc}}</p>
+
+      <div class="flex justify-center gap-4">
+        <button class="bg-black rounded-full w-8 h-8 cursor-pointer"></button>
+        <button class="bg-white rounded-full w-8 h-8 cursor-pointer"></button>
+        <button class="bg-bdazzledBlue rounded-full w-8 h-8 cursor-pointer"></button>
+      </div>
+
+      <hr class="h-[3px] bg-bdazzledBlue">
+
+      <div class="w-full flex justify-center gap-8">
+        <p class="text-2xl text-bdazzledBlue font-extrabold">
+          <span class="text-lg">EGP</span>
+          {{(product|async)?.price}}
+        </p>
+        <button class="btn-primary bg-bdazzledBlue">
+          Buy
+        </button>
+      </div>
+    </div>
+
+    <img 
+      src="{{imgBaseUrl}}w_500/{{(product|async)?.img}}" 
+      alt="/"
+      class="sm:w-1/2">    
+  </div>
+
 </section>

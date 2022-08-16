@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faBars, faCartShopping, faCouch, faGear, faMagnifyingGlass, faUser } from '@fortawesome/free-solid-svg-icons';
+import { faAngleRight, faBars, faCartShopping, faCouch, faGear, faMagnifyingGlass, faUser } from '@fortawesome/free-solid-svg-icons';
 
 
 
@@ -25,6 +25,7 @@ export class FontAwesomeLibraryModule {
       faUser,
       faMagnifyingGlass,
       faGear,
+      faAngleRight
     )
   }
  }
