@@ -1,28 +1,34 @@
 <a 
   [routerLink]="['/products', item.id]" 
-  class="w-36 h-52 sm:w-72 sm:h-96 bg-gradient-to-r from-blanchedAlmond to-earthYellow/20 p-4 flex flex-col items-center justify-center rounded-2xl cursor-pointer"
+  class="w-36 h-52 sm:w-52 sm:h-72 bg-gradient-to-r from-blanchedAlmond to-earthYellow/20 p-4 flex flex-col items-center justify-center rounded-2xl cursor-pointer shadow-[0px_5px_5px] shadow-goldenBrown/30 drop-shadow-2xl"
   >
 
   <!-- img for mobile -->
   <img 
-    src="{{imgBaseUrl}}/w_150/{{item.img}}" 
+    src="{{imgBaseUrl}}/w_112/{{item.img}}" 
     [alt]="item.name" 
-    class="w-28 h-32 sm:w-60 sm:hidden object-contain"
+    class="w-36 h-20 sm:hidden object-contain"
     >
 
   <!-- img for big screens -->
   <img 
-    src="{{imgBaseUrl}}/w_240/{{item.img}}" 
+    src="{{imgBaseUrl}}/w_176/{{item.img}}" 
     [alt]="item.name" 
-    class="hidden sm:w-60 sm:block object-contain"
+    class="hidden w-52 h-32 sm:block object-contain"
     >
 
   <div>
     <h3 class="text-bdazzledBlue font-extrabold">
       {{ item.name }}
     </h3>
+
+    <p class="text-[8px] sm:text-[10px] text-goldenBrown my-2">{{item.desc.substr(0, 80)}}</p>
+
     <p class="text-sm">
-      EGP {{ item.price }}
+      <span class="text-xs">
+        EGP
+      </span>
+      {{ item.price }}
     </p>
   </div>
 </a>
