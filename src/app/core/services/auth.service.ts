@@ -39,6 +39,7 @@ export class AuthService {
     .then(res => {
       this.saveUserData(res.user)
       this.router.navigate([''])
+      setTimeout(()=> window.location.reload(), 150)
     })
     .catch(err => alert(err.message))
   }
@@ -51,6 +52,7 @@ export class AuthService {
       this.saveUserData(res.user)
       this.firestore.createDoc(res.user.email)
       this.router.navigate([''])
+      setTimeout(()=> window.location.reload(), 150)
     })
     .catch(err => alert(err.message))
   }
@@ -71,6 +73,6 @@ export class AuthService {
     signOut(this.auth)
     localStorage.clear()
     this.router.navigate([''])
-    // setTimeout(()=> window.location.reload(), 1200)
+    setTimeout(()=> window.location.reload(), 150)
   }
 }

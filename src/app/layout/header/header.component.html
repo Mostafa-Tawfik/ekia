@@ -1,10 +1,6 @@
-<nav class="w-full h-[70px] sm:h-[110px] fixed flex justify-around sm:relative items-center bg-gradient-to-r from-goldenBrown to-fieldDarb text-white rounded-b-3xl border-b-2 border-white z-50">
+<nav class="w-full h-[70px] sm:h-[110px] flex justify-around sm:relative items-center bg-gradient-to-r from-goldenBrown to-fieldDarb text-white rounded-b-3xl border-b-2 border-white">
 
-  <div class="flex-auto h-full flex sm:hidden justify-center items-center border-l-[1px] border-blanchedAlmond border-opacity-10">
-    <fa-icon icon="bars" size="2x" class="cursor-pointer"></fa-icon>
-  </div>
-
-  <div routerLink="" class="relative h-full flex-auto flex items-center justify-center border-x-[1px] sm:border-none border-blanchedAlmond border-opacity-10">
+  <div routerLink="/home" class="relative h-full flex-auto flex items-center justify-center border-x-[1px] sm:border-none border-blanchedAlmond border-opacity-10 z-50">
     <img src="../../assets/logo.png" alt="logo" class="w-[40px] h-[40px]">    
     <h1 class="text-3xl font-bold cursor-pointer">
       KIA
@@ -17,11 +13,11 @@
     </button>
   </div>
 
-  <div class="flex-auto h-full flex gap-4 justify-center items-center">
-    <fa-icon icon="magnifying-glass" size="2x" class="hidden sm:block cursor-pointer"></fa-icon>
-    <fa-icon icon="user" size="2x" routerLink="/account" class="hidden sm:block cursor-pointer"></fa-icon>
-    <fa-icon icon="cart-shopping" size="2x" class=" cursor-pointer"></fa-icon>
-    <fa-icon icon="gear" size="2x" class="hidden sm:block cursor-pointer"></fa-icon>
+  <div class="hidden h-full sm:flex flex-auto gap-4 justify-center items-center">
+    <fa-icon icon="magnifying-glass" size="2x" class="cursor-pointer"></fa-icon>
+    <fa-icon icon="user" size="2x" routerLink="/account" class="cursor-pointer"></fa-icon>
+    <fa-icon icon="cart-shopping" size="2x" class="cursor-pointer"></fa-icon>
+    <fa-icon icon="gear" size="2x" class="cursor-pointer"></fa-icon>
   </div>
 
 </nav>

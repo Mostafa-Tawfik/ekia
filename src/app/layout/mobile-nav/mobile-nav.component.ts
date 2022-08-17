@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { faCouch, faGear, faHouse, faMagnifyingGlass, faUser } from '@fortawesome/free-solid-svg-icons';
+import { faCartShopping, faCouch, faHouse, faMagnifyingGlass, faUser } from '@fortawesome/free-solid-svg-icons';
+import { AuthService } from 'src/app/core/services/auth.service';
 import { MobileNav } from '../models/mobile-nav';
 
 @Component({
@@ -8,22 +9,28 @@ import { MobileNav } from '../models/mobile-nav';
   styleUrls: ['./mobile-nav.component.css']
 })
 export class MobileNavComponent implements OnInit {
+
+  
   mobileNavItems: MobileNav[] = [
-    { name: "Home", icon: faHouse, dis: "translate-x-0", path: '' },
-    { name: "Products", icon: faCouch, dis: "translate-x-16", path: '/products' },
-    { name: "Search", icon: faMagnifyingGlass, dis: "translate-x-32", path: '' },
-    { name: "Account", icon: faUser, dis: "translate-x-48", path: '/account' },
-    { name: "Settings", icon: faGear, dis: "translate-x-64", path: '' },
+    { name: "Home", icon: faHouse, dis: "translate-x-0", path: '/home' },
+    { name: "Products", icon: faCouch, dis: "translate-x-16", path: '/products'},
+    { name: "Search", icon: faMagnifyingGlass, dis: "translate-x-32", path: '/search' },
+    { name: "Account", icon: faUser, dis: "translate-x-48", path: this.checkUser() },
+    { name: "Cart", icon: faCartShopping, dis: "translate-x-64", path: '/cart' },
   ]
-
-  active: number = 0
-
-  constructor() { }
-
+  
+  constructor(
+    private auth: AuthService
+    ) {}
+    
   ngOnInit(): void {
   }
 
-  setActive(i:number) {
-    return this.active=i
+  checkUser() {
+    if(this.auth.currentUser.email) {
+      return '/account'
+    } else {
+      return '/signin'
+    } 
   }
 }

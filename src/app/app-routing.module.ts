@@ -14,7 +14,7 @@ import { ProductsComponent } from './pages/products/products.component';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'home',
     component: HomeComponent
   },
   {
@@ -47,6 +47,12 @@ const routes: Routes = [
     path: 'account',
     component: AccountComponent,
     canActivate: [AccountGuard]
+  },
+  {
+    // wrong paths redirects to home
+    path: '',
+    redirectTo: '/home',
+    pathMatch: 'prefix'
   },
 ];
 
