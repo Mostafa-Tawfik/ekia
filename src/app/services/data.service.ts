@@ -32,12 +32,16 @@ export class DataService {
     return this.http.get<[]>('assets/data/categories-data.json')
   }
 
-  // filter products by category
+  // filter products by category else return all products
   filterProductsByCategory(category: string): Observable<Product[]> {
     return this.http
     .get<Product[]>('assets/data/products-data.json')
     .pipe(map(res => {
-      return res.filter((item: Product) => item.category == category)
+      if(category == 'none') {
+        return res
+      } else {
+        return res.filter((item: Product) => item.category == category)
+      }
     }))
   }
 }
