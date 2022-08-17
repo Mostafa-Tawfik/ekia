@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FirestoreService } from 'src/app/core/services/firestore.service';
+import { FirestoreService } from 'src/app/services/firestore.service';
 
 import { Category } from 'src/app/models/category';
 import { Product } from 'src/app/models/product';

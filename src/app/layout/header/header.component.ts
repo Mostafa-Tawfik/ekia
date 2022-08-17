@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from 'src/app/core/services/auth.service';
-import { LocalStorageService } from 'src/app/core/services/local-storage.service';
+import { NavItems } from '../models/header';
+import { HeaderService } from './header.service';
 
 @Component({
   selector: 'app-header',
@@ -9,18 +9,14 @@ import { LocalStorageService } from 'src/app/core/services/local-storage.service
 })
 export class HeaderComponent implements OnInit {
 
-  navItems = [
-    { link: '', title: 'Home' },
-    { link: 'products', title: 'Products' },
-    { link: 'about', title: 'About EKIA' },
-    { link: 'contact', title: 'Contact us' },
-  ]
-
-  
+  navItems: NavItems[] = []
+ 
   constructor(
+    private headerService: HeaderService
     ) { }
     
 
   ngOnInit(): void {
+    this.navItems = this.headerService.navItems
   }
 }

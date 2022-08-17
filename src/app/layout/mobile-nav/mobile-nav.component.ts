@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { faCartShopping, faCouch, faHouse, faMagnifyingGlass, faUser } from '@fortawesome/free-solid-svg-icons';
-import { AuthService } from 'src/app/core/services/auth.service';
+
+import { MobileNavService } from './mobile-nav.service';
 import { MobileNav } from '../models/mobile-nav';
 
 @Component({
@@ -9,28 +9,15 @@ import { MobileNav } from '../models/mobile-nav';
   styleUrls: ['./mobile-nav.component.css']
 })
 export class MobileNavComponent implements OnInit {
-
   
-  mobileNavItems: MobileNav[] = [
-    { name: "Home", icon: faHouse, dis: "translate-x-0", path: '/home' },
-    { name: "Products", icon: faCouch, dis: "translate-x-16", path: '/products'},
-    { name: "Search", icon: faMagnifyingGlass, dis: "translate-x-32", path: '/search' },
-    { name: "Account", icon: faUser, dis: "translate-x-48", path: this.checkUser() },
-    { name: "Cart", icon: faCartShopping, dis: "translate-x-64", path: '/cart' },
-  ]
+  mobileNavItems: MobileNav[] = []
   
   constructor(
-    private auth: AuthService
+    private layout: MobileNavService
     ) {}
     
   ngOnInit(): void {
+    this.mobileNavItems = this.layout.mobileNavItems
   }
 
-  checkUser() {
-    if(this.auth.currentUser.email) {
-      return '/account'
-    } else {
-      return '/signin'
-    } 
-  }
 }

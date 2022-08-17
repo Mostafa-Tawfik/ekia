@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { AccountGuard } from './core/guards/account.guard';
-import { SignGuard } from './core/guards/sign.guard';
+import { AccountGuard } from './guards/account.guard';
+import { SignGuard } from './guards/sign.guard';
 import { SigninComponent } from './core/signin/signin.component';
 import { SignupComponent } from './core/signup/signup.component';
 import { AboutComponent } from './pages/about/about.component';
