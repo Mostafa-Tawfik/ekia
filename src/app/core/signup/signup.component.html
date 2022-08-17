@@ -2,11 +2,13 @@
 
   <div class='bg-fieldDarb/40 fixed top-0 left-0 w-full h-screen'></div>
 
-  <div class='relative w-full px-4 py-24'>
-    <div class='max-w-[450px] h-[600px] mx-auto bg-black/75 text-white rounded-xl'>
+  <div class='relative w-full px-4 py-16'>
+    <div class='max-w-[450px] h-[550px] mx-auto bg-black/75 text-white rounded-3xl shadow-[0px_0px_5px_5px] shadow-blanchedAlmond drop-shadow'>
       <div class='max-w-[280px] sm:max-w-[320px] mx-auto py-16'>
 
-        <h1 class='text-2xl sm:text-3xl font-bold whitespace-nowrap'>Create a new account</h1>
+        <h1 class='text-2xl sm:text-3xl font-bold whitespace-nowrap'>
+          Create a new account
+        </h1>
 
         <form 
           class='w-full flex flex-col py-4'
@@ -16,19 +18,19 @@
 
           <!-- email input -->
           <input 
-            class='p-4 my-2 bg-white rounded text-black z-10' 
+            class='p-4 my-2 bg-white rounded-3xl text-black z-10' 
             [(ngModel)] = "email"
             #signInEmail = "ngModel"
             email="true"
             name="email"
             type="email" 
-            placeholder='Enter your email address' 
+            placeholder='📧 Enter your email address' 
             autoComplete='email'
             required
             >
 
           <div 
-            class="w-fit text-red-600 bg-white text-xs px-4 py-1 -mt-3 rounded-br-2xl duration-700 transition-all z-0"
+            class="w-fit text-red-600 bg-white text-xs px-4 py-1 mx-auto -mt-3 rounded-b-xl duration-700 transition-all z-0"
             [ngClass]="signInEmail.invalid && (signInEmail.dirty || signInEmail.touched) 
               ? 'translate-y-0 duration-700 transition-all' 
               : 'invisible -translate-y-10 duration-700 transition-all'"
@@ -43,19 +45,19 @@
 
           <!-- password input -->
           <input 
-            class='p-4 my-2 bg-white rounded text-black z-10'
+            class='p-4 my-2 bg-white rounded-3xl text-black z-10'
             [(ngModel)] = "password"
             #signUpPassword = "ngModel"
             name="password"
             type="password" 
-            placeholder='Enter your password' 
+            placeholder='🔒 Enter your password' 
             autoComplete='current-password'
             required
             minlength="6"
             />
 
           <div 
-            class="w-fit text-red-600 bg-white text-xs px-4 py-1 -mt-3 rounded-br-2xl duration-700 transition-all z-0"
+            class="w-fit text-red-600 bg-white text-xs px-4 py-1 mx-auto -mt-3 rounded-b-xl duration-700 transition-all z-0"
             [ngClass]="signUpPassword.invalid && (signUpPassword.dirty || signUpPassword.touched) 
               ? 'translate-y-0 duration-700 transition-all' 
               : 'invisible -translate-y-10 duration-700 transition-all'"
@@ -70,7 +72,7 @@
           
           <!-- submit button -->
           <button 
-            class="my-6"
+            class="my-2"
             type="submit"
             [disabled]="signUpForm.invalid"
             [ngClass]="signUpForm.valid ? 'btn-primary' : 'btn-disabled'"
@@ -78,7 +80,7 @@
             Sign Up
           </button>
 
-          <p class='mt-4 py-4 border-t-2 border-blanchedAlmond/30 text-blanchedAlmond/80 text-center'>
+          <p class='mt-2 py-4 border-t-2 border-blanchedAlmond/30 text-blanchedAlmond/80 text-center'>
             or sign up with
           </p>
 
