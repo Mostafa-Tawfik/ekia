@@ -8,10 +8,10 @@
       <div 
         [routerLink]="navItem.path" 
         (click)="setActive(i)" 
-        class="w-[70px] h-[70px] flex flex-col text-center justify-center items-center  cursor-pointer rounded-full"
+        class="w-[70px] h-[70px] flex flex-col text-center justify-center items-center text-white cursor-pointer rounded-full"
         [ngClass]="active === i 
-          ? 'text-bdazzledBlue bg-white -translate-y-4 duration-700 border-4 outline-8 outline outline-earthYellow' 
-          : 'text-white'"
+          ? 'text-bdazzledBlue bg-white -translate-y-4 duration-700 border-4 shadow-[0px_0px_0px_8px_rgb(207,163,100)]' 
+          : ''"
         >
 
         <span class='text-xl cursor-pointer duration-500 z-50 {{
