@@ -8,11 +8,11 @@
   <article class="w-full sm:w-1/2 flex flex-col justify-center items-center sm:items-start gap-4">
 
     <h2 class="text-bdazzledBlue font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight">
-      STRANDMON
+      {{product.name}}
     </h2>
 
     <p class="max-w-3xl text-lg">
-      Give STRANDMON wing chair both a practical and beautiful gift. This cover adds a new and nice look – while protecting the wing chair and making it easy to take care of.
+      {{product.desc}}
     </p>
 
     <a routerLink='/products' class="btn-primary w-[160px]">
@@ -22,6 +22,6 @@
 
   </article>
 
-  <img src="https://res.cloudinary.com/do1rqqi7v/image/upload/w_300/v1660573041/Projects/EKIA/img3_ak4oxi.png" alt="hero" class="w-[300px] float-right">
+  <img src="https://res.cloudinary.com/do1rqqi7v/image/upload/w_300/{{product.img}}" alt="hero" class="w-[300px] float-right">
 
 </section>

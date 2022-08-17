@@ -11,6 +11,16 @@ export class DataService {
 
   constructor(private http: HttpClient) { }
 
+  // fetch all products
+  getProducts(): Observable<Product[]> {
+    return this.http.get<[]>('assets/data/products-data.json')
+  }
+
+  // fetch all categories
+  getCategories(): Observable<Category[]> {
+    return this.http.get<[]>('assets/data/categories-data.json')
+  }
+
   // get product by id
   getProductById(id: number): Observable<Product[]> {
     return this.http
@@ -20,16 +30,6 @@ export class DataService {
     .pipe(map(res => {
       return res.filter((item: Product) => item.id == id)
     }))
-  }
-
-  // fetch all products
-  getProducts(): Observable<Product[]> {
-    return this.http.get<[]>('assets/data/products-data.json')
-  }
-
-  // fetch all categories
-  getCategories(): Observable<Category[]> {
-    return this.http.get<[]>('assets/data/categories-data.json')
   }
 
   // filter products by category else return all products
@@ -42,6 +42,15 @@ export class DataService {
       } else {
         return res.filter((item: Product) => item.category == category)
       }
+    }))
+  }
+
+  // get random product
+  getRandomProduct(): Observable<Product> {
+    return this.http
+    .get<Product[]>('assets/data/products-data.json')
+    .pipe(map (res => {
+      return res[Math.floor(Math.random() * res.length)]
     }))
   }
 }

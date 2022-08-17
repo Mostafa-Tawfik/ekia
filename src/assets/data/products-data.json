@@ -46,5 +46,61 @@
     "price": 350,
     "img": "v1660423709/Projects/EKIA/img13-1_thycjd.png",
     "desc": "A loyal friend that’s been in our range since 1979. With tender loving care we’ve made it even better. It’s easy to assemble, lift and move around. We’ve kept the prices down, so your spirits go up."
+  },
+  {
+    "id": 7,
+    "name": "SHELL",
+    "category": "beds",
+    "price": 7999,
+    "img": "v1660704403/Projects/EKIA/kisspng-bedroom-mattress-coir-bedroom-double-bed-mattress-5a6d06786494d7.812342371517094520412_ah8t1u.png",
+    "desc": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim minus inventore laudantium delectus veritatis doloribus assumenda quia dolores iure id."
+  },
+  {
+    "id": 8,
+    "name": "ILIAN",
+    "category": "beds",
+    "price": 3500,
+    "img": "v1660704403/Projects/EKIA/kisspng-bedroom-headboard-couch-adriana-hoyos-continental-simple-double-bed-5a982e0e338a10.0963412615199227022111_phvnoy.png",
+    "desc": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim minus inventore laudantium delectus veritatis doloribus assumenda quia dolores iure id."
+  },
+  {
+    "id": 9,
+    "name": "FRAN",
+    "category": "beds",
+    "price": 6200,
+    "img": "v1660704291/Projects/EKIA/5a351f64604902.8425620115134308843944_Small_wmul5f.png",
+    "desc": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim minus inventore laudantium delectus veritatis doloribus assumenda quia dolores iure id."
+  },
+  {
+    "id": 10,
+    "name": "ARIANI",
+    "category": "tables",
+    "price": 730,
+    "img": "v1660704029/Projects/EKIA/img11_Small_iesgkv.png",
+    "desc": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim minus inventore laudantium delectus veritatis doloribus assumenda quia dolores iure id."
+  },
+  {
+    "id": 11,
+    "name": "MARION",
+    "category": "tables",
+    "price": 860,
+    "img": "v1660704177/Projects/EKIA/img12_Small_ubjzsz.png",
+    "desc": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim minus inventore laudantium delectus veritatis doloribus assumenda quia dolores iure id."
+  },
+  {
+    "id": 12,
+    "name": "AMELI",
+    "category": "chairs",
+    "price": 7300,
+    "img": "v1660703892/Projects/EKIA/5a1ccbf5293131.8458130615118366611687_Small_qhacru.png",
+    "desc": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim minus inventore laudantium delectus veritatis doloribus assumenda quia dolores iure id."
+  },
+  {
+    "id": 13,
+    "name": "GUSAN",
+    "category": "beds",
+    "price": 2800,
+    "img": "v1660703821/Projects/EKIA/kisspng-bed-frame-bed-size_Small_bheb3h.png",
+    "desc": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim minus inventore laudantium delectus veritatis doloribus assumenda quia dolores iure id."
   }
 ]
