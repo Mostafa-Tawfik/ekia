@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { MobileNavService } from './mobile-nav.service';
-import { MobileNav } from '../models/mobile-nav';
+import { MobileNav } from '../../models/mobile-nav';
 
 @Component({
   selector: 'app-mobile-nav',

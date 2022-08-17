@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Footer } from '../../models/footer';
+import { FooterService } from './footer.service';
 
 @Component({
   selector: 'app-footer',
@@ -7,46 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
-  externalLinks = [
-    { 
-      linksTitle: 'Useful Links',
-      linksInfo: [
-        { path: '' , title: 'Home' },
-        { path: 'products', title: 'Products' },
-        { path: 'about', title: 'About EKIA' },
-        { path: 'contact', title: 'Contact us' },
-      ]
-    },
+  externalLinks: Footer[] = []
 
-    {
-      linksTitle: 'Quick Links',
-      linksInfo: [
-        { path: '' , title: 'My Orders' },
-        { path: '', title: 'My Wishlist' },
-        { path: '', title: 'My Account' },
-        { path: '', title: 'My Favorite' },
-        { path: '', title: 'Terms of use' },
-      ]
-    },
-
-    {
-      linksTitle: 'Follow us on',
-      linksInfo: [
-        { path: '' , title: 'Facebook' },
-        { path: '', title: 'Twitter' },
-        { path: '', title: 'Instagram' },
-        { path: '', title: 'Linkedin' },
-      ]
-    }
-  ]
-
-
-
-
-
-  constructor() { }
+  constructor(
+    private footer: FooterService
+  ) { }
 
   ngOnInit(): void {
+    this.externalLinks = this.footer.externalLinks
   }
-
 }

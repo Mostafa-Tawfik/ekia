@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { MobileNav } from '../models/mobile-nav';
+import { MobileNav } from '../../models/mobile-nav';
 import { faCartShopping, faCouch, faHouse, faMagnifyingGlass, faUser } from '@fortawesome/free-solid-svg-icons';
 import { AuthService } from '../../services/auth.service';
 

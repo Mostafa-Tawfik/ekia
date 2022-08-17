@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { NavItems } from '../models/header';
+import { NavItems } from '../../models/header';
 
 @Injectable({
   providedIn: 'root'
