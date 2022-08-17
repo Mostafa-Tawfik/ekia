@@ -29,7 +29,7 @@
 
 @layer components {
   .btn-primary {
-    @apply bg-goldenBrown text-white font-bold cursor-pointer py-2 px-4 rounded-lg transition hover:contrast-200 hover:-translate-y-1 hover:transition duration-300
+    @apply bg-goldenBrown text-white font-bold cursor-pointer py-2 px-4 rounded-lg transition hover:saturate-200 hover:-translate-y-1 hover:transition duration-300
   }
   .btn-disabled {
   @apply bg-slate-600 text-white font-bold py-2 px-4 rounded-lg cursor-not-allowed
