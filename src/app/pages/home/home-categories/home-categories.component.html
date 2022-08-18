@@ -3,7 +3,7 @@
   <div class="w-full flex flex-col lg:flex-row justify-center items-center gap-8">
     
     <img 
-      src="{{imgBaseUrl}}/w_600/{{category.img}}" 
+      src="https://res.cloudinary.com/do1rqqi7v/image/upload/w_600/{{category.img}}" 
       [alt]="category.name" 
       class="sm:w-[600px] object-cover object-bottom rounded-3xl">
 
@@ -14,7 +14,7 @@
       </h3>
   
       <article>
-        <p>{{ category.desc }}</p>
+        <p class="text-slate-600">{{ category.desc }}</p>
       </article>
     </div>
     

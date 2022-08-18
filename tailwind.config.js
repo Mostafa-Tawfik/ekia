@@ -16,13 +16,34 @@ module.exports = {
         poppins: ["Poppins", "sans-serif"],
       },
       boxShadow: {
-        myShadow1: "4.1px -5px 0 0 rgb(17,24,39)",
-        myShadow2: "-4.1px -5px 0 0 rgb(17,24,39)",
+        primary: "0px 5px 15px rgb(207,163,100)",
+        icon: "0px 0px 0px 8px rgb(207,163,100)",
       },
+      animation: {
+        'spin-fast': 'spin 0.7s linear infinite',
+        wiggle: 'wiggle 1s ease-in-out infinite',
+        pulseFast: 'pulseFast 0.7s linear'
+      },
+      keyframes: {
+        wiggle: {
+          '0%, 100%': { transform: 'rotate(-3deg)' },
+          '50%': { transform: 'rotate(3deg)' },
+        },
+        pulseFast: {
+          '0%': { opacity: 1},
+          '20%': { opacity: 0},
+          '40%': { opacity: 1},
+          '60%': { opacity: 0},
+          '100%': { opacity: 1}
+        }
+      }
     },
   },
   future: {
     hoverOnlyWhenSupported: true,
+  },
+  variants: {
+    animation: ["motion-safe"]
   },
   plugins: [],
 }

@@ -1,10 +1,10 @@
 <section class="layout-margin w-full h-full sm:min-h-[calc(100vh-110px)] p-8 backdrop-blur-[2px]">
 
-  <!-- our categories section -->
+  <!-- COLLECTIONS section -->
   <div class="layout-margin">
     <div class="py-8">
-      <h2 class="text-bdazzledBlue font-extrabold">
-        Our Categories
+      <h2 class="md:text-5xl tracking-tight text-bdazzledBlue font-extrabold">
+        COLLECTIONS
       </h2>
       <hr class="h-[3px] bg-bdazzledBlue mt-4">
     </div>
@@ -15,7 +15,7 @@
           *ngFor="let category of categories"
           (click)="filterProducts(category.name)"
           [ngClass]="cateoryActivated == category.name 
-            ? 'bg-gradient-to-r from-blanchedAlmond to-earthYellow/20 saturate-200 border-1 border-goldenBrown rounded-3xl shadow-[0px_5px_15px_gray]' 
+            ? 'bg-gradient-to-r from-blanchedAlmond to-goldenBrown/20 border-1 border-goldenBrown rounded-3xl shadow-[0px_5px_15px_gray]' 
             : 'bg-blanchedAlmond/30 border-fieldDarb/10 rounded'"
           class="h-32 max-w-[170px] flex flex-col items-center justify-center border-2 py-2 cursor-pointer transition-all duration-300 ease-linear">
 
@@ -31,13 +31,13 @@
 
   </div>
 
-  <!-- our products section -->
+  <!-- CATALOGUE section -->
   <div class="layout-margin py-8 text-bdazzledBlue">
     <div class="py-8">
       <div class="flex justify-between">
 
-        <h2 class="font-extrabold">
-          Our Products
+        <h2 class="md:text-5xl tracking-tight font-extrabold">
+          CATALOGUE
         </h2>
 
         <button 

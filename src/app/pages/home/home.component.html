@@ -1,6 +1,10 @@
 <app-home-hero></app-home-hero>
 
-<div class="layout-margin flex flex-col justify-center items-center gap-16 py-16 p-8">
+<h3 class="layout-margin text-4xl md:text-5xl text-bdazzledBlue font-extrabold tracking-tight py-16 my-8 border-y-0 sm:border-y-4 border-goldenBrown">
+  Your imagination, <span class="text-goldenBrown">our creation</span>
+</h3>
+
+<div class="layout-margin flex flex-col justify-center items-center gap-16 pb-16">
   <app-home-categories *ngFor="let category of categories" [category]="category">
   </app-home-categories>
 </div>

@@ -24,28 +24,12 @@
   <!-- right pane -->
   <div class="hidden h-full sm:flex flex-auto gap-4 justify-center items-center">
     <fa-icon 
-      icon="magnifying-glass" 
+      *ngFor="let item of navIcons"
+      [icon]="item.icon" 
       size="2x" 
-      routerLink="/search" 
-      class="cursor-pointer">
-    </fa-icon>
-    <fa-icon 
-      icon="user" 
-      size="2x" 
-      routerLink="/account" 
-      class="cursor-pointer">
-    </fa-icon>
-    <fa-icon 
-      icon="heart" 
-      size="2x" 
-      routerLink="/wishlist" 
-      class="cursor-pointer">
-    </fa-icon>
-    <fa-icon 
-      icon="cart-shopping" 
-      size="2x" 
-      routerLink="/cart" 
-      class="cursor-pointer">
+      [routerLink]="item.path"
+      class="cursor-pointer rounded-full"
+      routerLinkActive="animate-pulseFast icon-animate border-8 -translate-y-1">
     </fa-icon>
   </div>
 

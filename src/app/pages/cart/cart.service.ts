@@ -9,7 +9,6 @@ import { FirestoreService } from 'src/app/services/firestore.service';
 export class CartService {
 
   user: any = {}
-  products: Product[] = []
 
   constructor(
     private auth: AuthService,
@@ -18,10 +17,11 @@ export class CartService {
     this.user = this.auth.currentUser
   }
 
-  getDoc() {
+  // get cart form user firestore document
+  getCart(products: Product[]) {
     if(this.user.email) {
       this.fss.getDoc(this.user.email, 'cart')
-      .then((res: Product[]) => this.products = res)
+      .then((res: Product[]) => products.push(...res))
     } else {
       console.log('Please sign in to continue')
     }    

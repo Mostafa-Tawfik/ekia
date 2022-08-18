@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 
 import { MobileNav } from '../../models/mobile-nav';
-import { faCartShopping, faCouch, faHouse, faMagnifyingGlass, faUser } from '@fortawesome/free-solid-svg-icons';
 import { AuthService } from '../../services/auth.service';
 
 @Injectable({
@@ -15,19 +14,19 @@ export class MobileNavService {
 
   mobileNavItems: MobileNav[] = [
     { 
-      name: "Home", icon: faHouse, dis: "translate-x-0", path: '/home' 
+      name: "Home", icon: 'house', path: 'home' 
     },
     { 
-      name: "Products", icon: faCouch, dis: "translate-x-16", path: '/products'
+      name: "Products", icon: 'couch', path: 'products'
     },
     { 
-      name: "Search", icon: faMagnifyingGlass, dis: "translate-x-32", path: '/search' 
+      name: "Search", icon: 'magnifying-glass', path: 'search' 
     },
     { 
-      name: "Account", icon: faUser, dis: "translate-x-48", path: this.checkUser() 
+      name: "Account", icon: 'user', path: this.checkUser() 
     },
     { 
-      name: "Cart", icon: faCartShopping, dis: "translate-x-64", path: '/cart' 
+      name: "Cart", icon: 'cart-shopping', path: 'cart' 
     },
   ]
 

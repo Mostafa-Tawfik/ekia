@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { NavItems } from '../../models/header';
+
+import { MobileNav } from 'src/app/models/mobile-nav';
+import { NavItems } from '../../models/navItems';
 import { HeaderService } from './header.service';
 
 @Component({
@@ -9,6 +11,7 @@ import { HeaderService } from './header.service';
 export class HeaderComponent implements OnInit {
 
   navItems: NavItems[] = []
+  navIcons: MobileNav[] = []
  
   constructor(
     private headerService: HeaderService
@@ -17,5 +20,6 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
     this.navItems = this.headerService.navItems
+    this.navIcons = this.headerService.navIcons
   }
 }

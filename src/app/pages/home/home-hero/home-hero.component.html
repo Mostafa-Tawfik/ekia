@@ -1,30 +1,32 @@
-<section class="layout-margin w-full h-full sm:h-[calc(100vh-110px)] flex flex-col sm:flex-row justify-center items-center gap-4 p-8 backdrop-blur-[2px]">
+<section class="relative w-full h-full sm:h-[calc(100vh-110px)] bg-blanchedAlmond/60 py-8">
+  <div class="layout-margin h-full flex flex-col-reverse sm:flex-row gap-4 justify-center items-center">
 
-  <!-- bg overlay -->
-  <div class="absolute top-0 left-0 w-full h-full bg-goldenBrown/5 -z-10">
+    <div class="sm:w-1/2 flex flex-col justify-center items-start gap-4">
+      <h2 class="text-4xl md:text-6xl lg:text-6xl text-goldenBrown font-extrabold tracking-tight">
+        Furniture with pride
+      </h2>
+      <h3 class="text-4xl md:text-6xl lg:text-6xl text-bdazzledBlue font-extrabold tracking-tight -mt-4 sm:-mt-2">
+        Crafted with excellent Mood
+      </h3>
+      <p class="text-slate-600 mt-5 sm:text-lg sm:max-w-xl">
+        The furniture in a house resembles the meat and potatoes of a dinner. Our furniture takes up the dominant part of the room and helps make your home feel lived in, inviting, and finished.
+      </p>
+      <a 
+        routerLink="/products" 
+        class="btn-primary bg-bdazzledBlue flex justify-center items-center text-2xl w-40 h-16 mt-4 sm:mt-8 mx-auto xl:mx-0">
+        Shop Now
+      </a>
+    </div>
+
+    <div class="sm:w-1/2">
+    </div>
+
+    <div class="lg:block sm:absolute top-0 right-0 w-full sm:w-1/2 sm:h-[calc(100vh-110px)]">
+      <img 
+        class="w-full h-[250px] sm:h-[calc(100vh-110px)] object-cover object-top" 
+        src="https://res.cloudinary.com/do1rqqi7v/image/upload/v1660852707/Projects/EKIA/herobg_yswzto.jpg" 
+        alt="/">
+    </div>
 
   </div>
-
-  <article class="w-full sm:w-1/2 flex flex-col justify-center items-center sm:items-start gap-4">
-
-    <h2 class="text-bdazzledBlue font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight">
-      {{product.name}}
-    </h2>
-
-    <p class="max-w-3xl text-lg">
-      {{product.desc}}
-    </p>
-
-    <a routerLink='/products' class="btn-primary w-[160px]">
-      Shop Now &nbsp;
-      <fa-icon icon="couch"></fa-icon>
-    </a>
-
-  </article>
-
-  <img 
-    src="https://res.cloudinary.com/do1rqqi7v/image/upload/w_300/{{product.img}}" 
-    alt="hero" 
-    class="w-[300px] float-right">
-
 </section>

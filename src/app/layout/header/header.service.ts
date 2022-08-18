@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { NavItems } from '../../models/header';
+import { MobileNav } from 'src/app/models/mobile-nav';
+import { NavItems } from '../../models/navItems';
 
 @Injectable({
   providedIn: 'root'
@@ -17,6 +18,29 @@ export class HeaderService {
     },
     { 
       path: 'about', title: 'About EKIA' 
+    },
+  ]
+
+  navIcons: MobileNav[] = [
+    {
+      name: 'search',
+      path: 'search',
+      icon: 'magnifying-glass'
+    },
+    {
+      name: 'account',
+      path: 'account',
+      icon: 'user'
+    },
+    {
+      name: 'wishlist',
+      path: 'wishlist',
+      icon: 'heart'
+    },
+    {
+      name: 'cart',
+      path: 'cart',
+      icon: 'cart-shopping'
     },
   ]
 }

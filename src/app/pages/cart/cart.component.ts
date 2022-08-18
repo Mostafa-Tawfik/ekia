@@ -13,15 +13,10 @@ export class CartComponent implements OnInit {
   constructor(
     private cartSevice: CartService
   ) {
-    this.cartSevice.getDoc()
+    this.cartSevice.getCart(this.products)
   }
 
   ngOnInit(): void {
-    this.products = this.cartSevice.products
-  }
-
-  ngOnChange() {
-    this.cartSevice.getDoc()
-    this.products = this.cartSevice.products
+    console.log(this.products);
   }
 }
