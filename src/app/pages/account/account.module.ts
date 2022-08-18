@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AccountComponent } from './account.component';
+import { AccountRoutingModule } from './account-routing.module';
 
 
 
@@ -9,7 +10,8 @@ import { AccountComponent } from './account.component';
     AccountComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    AccountRoutingModule
   ]
 })
 export class AccountModule { }

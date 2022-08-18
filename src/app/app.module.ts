@@ -19,8 +19,8 @@ import { CartModule } from './pages/cart/cart.module';
 import { HomeModule } from './pages/home/home.module';
 import { ProductsModule } from './pages/products/products.module';
 import { AboutModule } from './pages/about/about.module';
-import { WishlistModule } from './pages/wishlist/wishlist.module';
 import { AuthModule } from './auth/auth.module';
+import { WishlistModule } from './pages/wishlist/wishlist.module';
 
 
 @NgModule({

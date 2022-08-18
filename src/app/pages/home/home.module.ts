@@ -6,6 +6,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { HomeComponent } from './home.component';
 import { HomeHeroComponent } from './home-hero/home-hero.component';
 import { HomeCategoriesComponent } from './home-categories/home-categories.component';
+import { HomeRoutingModule } from './home-routing.module';
 
 
 
@@ -19,6 +20,7 @@ import { HomeCategoriesComponent } from './home-categories/home-categories.compo
     CommonModule,
     AppRoutingModule,
     SharedModule,
+    HomeRoutingModule
   ]
 })
 export class HomeModule { }

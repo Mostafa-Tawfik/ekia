@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { WishlistComponent } from './wishlist.component';
 
+import { WishlistRoutingModule } from './wishlist-routing.module';
+import { WishlistComponent } from './wishlist.component';
 
 
 @NgModule({
@@ -9,7 +10,8 @@ import { WishlistComponent } from './wishlist.component';
     WishlistComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    WishlistRoutingModule
   ]
 })
 export class WishlistModule { }
