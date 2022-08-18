@@ -28,7 +28,7 @@
         </p>
 
         <button 
-          (click)="addToCart(product)"
+          (click)="addToDoc(product, 'cart')"
           class="btn-primary bg-bdazzledBlue">
           Add to bag
           <fa-icon 
@@ -39,16 +39,16 @@
         </button>
 
         <fa-icon 
-          (click)="addToWishlist(product)"
+          (click)="addToDoc(product, 'wishlist')"
           icon="heart-circle-plus" 
           size="2x" 
-          class="cursor-pointer text-bdazzledBlue hover:scale-105 duration-300">
+          class="cursor-pointer text-bdazzledBlue hover:scale-105 hover:saturate-200 duration-300">
         </fa-icon>
       </div>
     </div>
 
     <img 
-      src="{{imgBaseUrl}}w_500/{{product.img}}" 
+      src="https://res.cloudinary.com/do1rqqi7v/image/upload/w_500/{{product.img}}" 
       alt="/"
       class="sm:w-1/2">    
   </div>

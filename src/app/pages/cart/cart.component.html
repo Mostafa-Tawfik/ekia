@@ -1,1 +1,5 @@
-<p>cart works!</p>
+<main class="layout-margin w-full h-full sm:min-h-[calc(100vh-110px)] p-8 backdrop-blur-[2px]">
+  <div *ngFor="let item of products">
+    <p>{{item.name}}</p>
+  </div>
+</main>
