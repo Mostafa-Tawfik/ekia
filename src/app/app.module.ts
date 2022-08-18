@@ -9,13 +9,18 @@ import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+import { PERSISTENCE } from '@angular/fire/compat/auth';
 
 import { LayoutModule } from './layout/layout.module';
-import { PagesModule } from './pages/pages.module';
 import { CoreModule } from './core/core.module';
 import { AccountModule } from './pages/account/account.module';
 
-import { PERSISTENCE } from '@angular/fire/compat/auth';
+import { CartModule } from './pages/cart/cart.module';
+import { HomeModule } from './pages/home/home.module';
+import { ProductsModule } from './pages/products/products.module';
+import { AboutModule } from './pages/about/about.module';
+import { WishlistModule } from './pages/wishlist/wishlist.module';
+import { AuthModule } from './auth/auth.module';
 
 
 @NgModule({
@@ -26,13 +31,18 @@ import { PERSISTENCE } from '@angular/fire/compat/auth';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    LayoutModule,
-    PagesModule,
-    CoreModule,
-    AccountModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
+    AuthModule,
+    CoreModule,
+    LayoutModule,
+    HomeModule,
+    ProductsModule,
+    AboutModule,
+    AccountModule,
+    CartModule,
+    WishlistModule,
   ],
   providers: [
     { provide: PERSISTENCE, useValue: 'session' },

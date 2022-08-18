@@ -1,13 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AccountGuard } from './core/guards/account.guard';
+import { SignGuard } from './core/guards/sign.guard';
 
-import { AccountGuard } from './guards/account.guard';
-import { SignGuard } from './guards/sign.guard';
-import { SigninComponent } from './core/signin/signin.component';
-import { SignupComponent } from './core/signup/signup.component';
+import { SigninComponent } from './auth/signin/signin.component';
+import { SignupComponent } from './auth/signup/signup.component';
 import { AboutComponent } from './pages/about/about.component';
 import { AccountComponent } from './pages/account/account.component';
-import { ContactComponent } from './pages/contact/contact.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ProductDetailsComponent } from './pages/products/product-details/product-details.component';
 import { ProductsComponent } from './pages/products/products.component';
@@ -28,10 +27,6 @@ const routes: Routes = [
   {
     path: 'about',
     component: AboutComponent
-  },
-  {
-    path: 'contact',
-    component: ContactComponent
   },
   {
     path: 'signin',

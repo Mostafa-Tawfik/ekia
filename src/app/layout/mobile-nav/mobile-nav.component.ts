@@ -6,7 +6,6 @@ import { MobileNav } from '../../models/mobile-nav';
 @Component({
   selector: 'app-mobile-nav',
   templateUrl: './mobile-nav.component.html',
-  styleUrls: ['./mobile-nav.component.css']
 })
 export class MobileNavComponent implements OnInit {
   

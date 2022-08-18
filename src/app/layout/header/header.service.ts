@@ -18,8 +18,5 @@ export class HeaderService {
     { 
       path: 'about', title: 'About EKIA' 
     },
-    { 
-      path: 'contact', title: 'Contact us' 
-    },
   ]
 }
