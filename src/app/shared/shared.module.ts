@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FontAwesomeLibraryModule } from './font-awesome-library/font-awesome-library.module';
-import { AppRoutingModule } from '../app-routing.module';
 
 
 
@@ -11,7 +10,6 @@ import { AppRoutingModule } from '../app-routing.module';
   imports: [
     CommonModule,
     FontAwesomeLibraryModule,
-    AppRoutingModule,
   ],
   exports: [
     FontAwesomeLibraryModule,

@@ -17,7 +17,6 @@ import { AccountModule } from './pages/account/account.module';
 
 import { CartModule } from './pages/cart/cart.module';
 import { HomeModule } from './pages/home/home.module';
-import { ProductsModule } from './pages/products/products.module';
 import { AboutModule } from './pages/about/about.module';
 import { AuthModule } from './auth/auth.module';
 import { WishlistModule } from './pages/wishlist/wishlist.module';
@@ -38,7 +37,6 @@ import { WishlistModule } from './pages/wishlist/wishlist.module';
     CoreModule,
     LayoutModule,
     HomeModule,
-    ProductsModule,
     AboutModule,
     AccountModule,
     CartModule,
