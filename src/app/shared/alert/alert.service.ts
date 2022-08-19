@@ -21,7 +21,7 @@ export class AlertService {
     this.alert.message = message
     this.alert.status = status
     console.log('service',this.alert);
-    setTimeout(() => {this.alert.active = false, console.log(this.alert)}, 3000)   
+    setTimeout(() => this.alert.active = false, 3000)   
 
     return this.alert
   }

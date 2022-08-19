@@ -45,12 +45,12 @@ export class DataService {
     }))
   }
 
-  // get random product
-  getRandomProduct(): Observable<Product> {
-    return this.http
-    .get<Product[]>('assets/data/products-data.json')
-    .pipe(map (res => {
-      return res[Math.floor(Math.random() * res.length)]
-    }))
-  }
+  // // get random product
+  // getRandomProduct(): Observable<Product> {
+  //   return this.http
+  //   .get<Product[]>('assets/data/products-data.json')
+  //   .pipe(map (res => {
+  //     return res[Math.floor(Math.random() * res.length)]
+  //   }))
+  // }
 }

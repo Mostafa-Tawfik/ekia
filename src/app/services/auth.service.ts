@@ -11,6 +11,7 @@ import {
   signInWithPopup,
 } from '@angular/fire/auth'
 import { FirestoreService } from './firestore.service'
+import { AlertService } from '../shared/alert/alert.service'
 
 @Injectable({
   providedIn: 'root'
@@ -21,7 +22,8 @@ export class AuthService {
     public auth: Auth,
     private router: Router,
     private localStorage: LocalStorageService,
-    public firestore: FirestoreService
+    public firestore: FirestoreService,
+    public alertService: AlertService
     ) {}
     
     // init the user by checking on local storage
@@ -39,9 +41,9 @@ export class AuthService {
     .then(res => {
       this.saveUserData(res.user)
       this.router.navigate([''])
-      setTimeout(()=> window.location.reload(), 150)
+      this.alertService.setAlert(true, `Logged in successfully`, true)
     })
-    .catch(err => alert(err.message))
+    .catch(err => this.alertService.setAlert(true, err.message, false))
   }
 
   // sign in with google account
@@ -52,9 +54,9 @@ export class AuthService {
       this.saveUserData(res.user)
       this.firestore.createDoc(res.user.email)
       this.router.navigate([''])
-      setTimeout(()=> window.location.reload(), 150)
+      this.alertService.setAlert(true, `Logged in successfully`, true)
     })
-    .catch(err => alert(err.message))
+    .catch(err => this.alertService.setAlert(true, err.message, false))
   }
 
   // sign up with email and password then create a user doc on firebase
@@ -64,8 +66,9 @@ export class AuthService {
       this.saveUserData(res.user)
       this.firestore.createDoc(res.user.email)
       this.router.navigate([''])
+      this.alertService.setAlert(true, `Registration completed`, true)
     })
-    .catch(err => alert(err.message))
+    .catch(err => this.alertService.setAlert(true, err.message, false))
   }
 
   // sign out
@@ -73,6 +76,6 @@ export class AuthService {
     signOut(this.auth)
     localStorage.clear()
     this.router.navigate([''])
-    setTimeout(()=> window.location.reload(), 150)
+    this.alertService.setAlert(true, `See you soon`, true)
   }
 }
