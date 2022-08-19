@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { MobileNav } from 'src/app/models/mobile-nav';
+import { AuthService } from 'src/app/services/auth.service';
 import { NavItems } from '../../models/navItems';
 
 @Injectable({
@@ -7,7 +8,9 @@ import { NavItems } from '../../models/navItems';
 })
 export class HeaderService {
 
-  constructor() { }
+  constructor(
+    private auth: AuthService,
+  ) { }
 
   navItems: NavItems[] = [
     { 
@@ -29,7 +32,7 @@ export class HeaderService {
     },
     {
       name: 'account',
-      path: 'account',
+      path: this.checkUser(),
       icon: 'user'
     },
     {
@@ -43,4 +46,12 @@ export class HeaderService {
       icon: 'cart-shopping'
     },
   ]
+
+  checkUser() {
+    if(this.auth.currentUser.email) {
+      return '/account'
+    } else {
+      return '/signin'
+    } 
+  }
 }

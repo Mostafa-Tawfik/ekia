@@ -20,6 +20,7 @@ import { HomeModule } from './pages/home/home.module';
 import { AboutModule } from './pages/about/about.module';
 import { AuthModule } from './auth/auth.module';
 import { WishlistModule } from './pages/wishlist/wishlist.module';
+import { SharedModule } from './shared/shared.module';
 
 
 @NgModule({
@@ -33,6 +34,7 @@ import { WishlistModule } from './pages/wishlist/wishlist.module';
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
+    SharedModule,
     AuthModule,
     CoreModule,
     LayoutModule,

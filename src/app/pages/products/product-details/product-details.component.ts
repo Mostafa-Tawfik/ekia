@@ -5,6 +5,7 @@ import { FirestoreService } from 'src/app/services/firestore.service';
 
 import { Product } from 'src/app/models/product';
 import { DataService } from 'src/app/services/data.service';
+import { AlertService } from 'src/app/shared/alert/alert.service';
 
 @Component({
   selector: 'app-product-details',
@@ -20,13 +21,13 @@ export class ProductDetailsComponent implements OnInit {
 
   // user variable
   user: any
-
   
   constructor(
     private route: ActivatedRoute,
     private httpService: DataService,
     private fss: FirestoreService,
-    private auth: AuthService
+    private auth: AuthService,
+    public alertService: AlertService
     ) {
       this.product= {
         id: 0,
@@ -51,7 +52,7 @@ export class ProductDetailsComponent implements OnInit {
     if(this.user.email) {
       this.fss.addToDoc(product, this.user.email, docName)
     } else {
-      alert('Please sign in to continue')
+      this.alertService.setAlert(true, 'Please sign in to continue', false)
     }
   }
 }

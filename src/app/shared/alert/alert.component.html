@@ -1,0 +1,29 @@
+<div 
+  class="fixed top-0 left-0 h-[70px] w-full text-white p-4 font-extrabold delay-300 transition-all duration-300 z-50"
+  [ngClass]="[
+    alert.status
+      ? 'bg-green-900' 
+      : 'bg-red-900',
+    alert.active 
+      ? 'translate-y-0' 
+      : '-translate-y-full'
+    ]">
+
+  <div class="flex justify-center items-center gap-4">
+
+    <p class="text-2xl">
+      {{ alert.message }}
+    </p>
+
+    <div *ngIf="alert.status">
+      <fa-icon icon="circle-check" size="2x"></fa-icon>
+    </div>
+    
+    <div *ngIf="alert.status == false">
+      <fa-icon icon="exclamation-triangle" size="2x"></fa-icon>
+    </div>
+
+
+  </div>
+
+</div>

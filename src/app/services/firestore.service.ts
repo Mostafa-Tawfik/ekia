@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { doc, setDoc, Firestore, getDoc, arrayUnion, updateDoc } from '@angular/fire/firestore';
+
 import { Product } from 'src/app/models/product';
+import { AlertService } from '../shared/alert/alert.service';
 
 @Injectable({
   providedIn: 'root'
@@ -9,6 +11,7 @@ export class FirestoreService {
 
   constructor(
     public db: Firestore,
+    public alertService: AlertService
   ) {}
 
 
@@ -34,7 +37,7 @@ export class FirestoreService {
         price: product.price
       })
     })
-    console.log('Product added to cart!')
+    this.alertService.setAlert(true, `Product added to ${docName}!`, true)
   }
 
   
