@@ -8,7 +8,6 @@ import { AlertService } from 'src/app/shared/alert/alert.service';
 })
 export class CartService {
 
-
   // a vairable to hold the cart
   cart: any = []
 
@@ -16,6 +15,17 @@ export class CartService {
     private localStorage: LocalStorageService,
     public alertService: AlertService
   ) {
+  }
+
+  // get subtotal
+  cartSubtotal() {
+    if(this.cart.length > 0) {
+      return this.cart.map((item: any) => item.qty * item.price)
+      .reduce((x: number, y: number) => x + y)
+    } else {
+      this.cart
+    }
+    this.SaveTheCart()
   }
 
 
