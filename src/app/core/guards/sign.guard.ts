@@ -8,7 +8,12 @@ import { LocalStorageService } from '../../services/local-storage.service';
 })
 export class SignGuard implements CanActivate {
 
-  constructor(private router: Router, private localStorage: LocalStorageService){}
+  constructor(
+    private router: Router, 
+    private localStorage: LocalStorageService
+    ){
+      
+    }
 
   currentUser: any = {}
 

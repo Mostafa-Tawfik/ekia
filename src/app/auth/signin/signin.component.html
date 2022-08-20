@@ -74,11 +74,12 @@
             class="my-2"
             type="submit"
             [disabled]="loginForm.invalid"
-            [ngClass]="loginForm.valid ? 'btn-primary' : 'btn-disabled'"
+            [ngClass]="loginForm.valid ? 'btn-primary w-full' : 'btn-disabled'"
             >
             Sign In
           </button>
 
+          <!-- remember me -->
           <!-- <div class='flex justify-between items-center text-sm text-blanchedAlmond/30'>
             <p>
               <input class='mr-2 cursor-pointer' type='checkbox'/>

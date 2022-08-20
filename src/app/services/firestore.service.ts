@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { doc, setDoc, Firestore, getDoc, arrayUnion, updateDoc } from '@angular/fire/firestore';
+import { doc, setDoc, Firestore, getDoc, arrayUnion, updateDoc, arrayRemove } from '@angular/fire/firestore';
 
 import { Product } from 'src/app/models/product';
 import { AlertService } from '../shared/alert/alert.service';
@@ -19,7 +19,6 @@ export class FirestoreService {
   createDoc(email : any) {
     setDoc(doc(this.db, 'users', email),{
       wishlist: [],
-      cart: [],
       orders: []
     })
     .then(()=>console.log('Doc Created!'))
@@ -27,23 +26,29 @@ export class FirestoreService {
   }
 
 
-  // add to cart or wishlist, provide variable to save data, user email, document name, and as option any fnc to excute
-  addToDoc = async (product: Product, userEmail: string, docName: any, fnc?: any)=> {
-    fnc ? fnc() : ''
+  // add to document
+  addToDoc = async (product: Product, userEmail: string, docName: any)=> {
     await updateDoc(doc(this.db, 'users', userEmail), {
-      [docName]: arrayUnion({
-        id: product.id,
-        name: product.name,
-        price: product.price
-      })
+      [docName]: arrayUnion(product)
     })
     this.alertService.setAlert(true, `Product added to ${docName}!`, true)
   }
 
   
-  // get a user document by user email and document name
-  getDoc(userEmail: string, docName: string) {
-    const docRef = doc(this.db, 'users', userEmail)
-    return getDoc(docRef).then(doc => doc.data()?.[docName])
+  // delete doc
+  async deleteDoc(product:Product, userEmail: string, docName: any) {
+    await updateDoc(doc(this.db, 'users', userEmail), {
+      [docName]: arrayRemove(product)
+    })
+    this.alertService.setAlert(true, `Deleted successfuly!`, true)
+    setTimeout(()=> window.location.reload(), 0)
   }
+
+  
+  // get a user document by user email and document name
+  async getDoc(userEmail: string, docName: string) {
+    const docRef = doc(this.db, 'users', userEmail)
+    return await getDoc(docRef).then(doc => doc.data()?.[docName])
+  }
+
 }

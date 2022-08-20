@@ -8,23 +8,23 @@ import { FirestoreService } from 'src/app/services/firestore.service';
 })
 export class AccountComponent implements OnInit {
 
+  user: any
+
   constructor(
     public auth: AuthService,
     public firestore: FirestoreService
-    ) { }
+    ) {
+      this.user = this.auth.getCurrentUser()
+    }
 
-  public user = this.auth.currentUser
   
   ngOnInit(): void {
     console.log(this.user);
   }
 
-  createDoc() {
-    return this.firestore.createDoc(this.user.email)
-  }
-
   signOut() {
     this.auth.signOut()
+    this.user = this.auth.getCurrentUser()
   }
 
 }

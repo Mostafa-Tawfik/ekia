@@ -26,32 +26,47 @@ export class AuthService {
     public alertService: AlertService
     ) {}
     
-    // init the user by checking on local storage
-  currentUser: any = this.localStorage.getLocalStorage('auth', {})
+  // init the user by checking on local storage
+  currentUser: any = this.loadTheUser()
 
-  // store user data into local storage
-  saveUserData(data: any) {
-    this.localStorage.setLocalStorage('auth', data)
-    return this.currentUser = this.localStorage.getLocalStorage('auth', data)
+
+  // save the user data into local storage
+  saveTheUser(data: any) {
+    return this.localStorage.setLocalStorage('auth', data)
   }
+
+  // load the user from localStorage
+  loadTheUser() {
+    return this.localStorage.getLocalStorage('auth', [])
+  }
+
+  // get the lastest version of the cart
+  getCurrentUser() {
+    this.currentUser = this.loadTheUser()
+    return this.currentUser
+  }
+
 
   // sign in with email and password
   signIn(email : string, password : string) {
     signInWithEmailAndPassword(this.auth, email, password)
     .then(res => {
-      this.saveUserData(res.user)
+      this.saveTheUser(res.user)
+      this.getCurrentUser()
       this.router.navigate([''])
       this.alertService.setAlert(true, `Logged in successfully`, true)
     })
     .catch(err => this.alertService.setAlert(true, err.message, false))
   }
 
+
   // sign in with google account
   signInWithGoogle() {
     const provider = new GoogleAuthProvider()
     signInWithPopup(this.auth, provider)
     .then(res => {
-      this.saveUserData(res.user)
+      this.saveTheUser(res.user)
+      this.getCurrentUser()
       this.firestore.createDoc(res.user.email)
       this.router.navigate([''])
       this.alertService.setAlert(true, `Logged in successfully`, true)
@@ -59,11 +74,13 @@ export class AuthService {
     .catch(err => this.alertService.setAlert(true, err.message, false))
   }
 
+
   // sign up with email and password then create a user doc on firebase
   signUp(email : string, password : string) {
     createUserWithEmailAndPassword(this.auth, email, password)
     .then(res => {
-      this.saveUserData(res.user)
+      this.saveTheUser(res.user)
+      this.getCurrentUser()
       this.firestore.createDoc(res.user.email)
       this.router.navigate([''])
       this.alertService.setAlert(true, `Registration completed`, true)
@@ -71,10 +88,12 @@ export class AuthService {
     .catch(err => this.alertService.setAlert(true, err.message, false))
   }
 
+
   // sign out
   signOut() {
     signOut(this.auth)
-    localStorage.clear()
+    localStorage.removeItem('auth')
+    this.getCurrentUser()
     this.router.navigate([''])
     this.alertService.setAlert(true, `See you soon`, true)
   }

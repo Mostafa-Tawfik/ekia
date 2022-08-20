@@ -6,6 +6,7 @@ import { FirestoreService } from 'src/app/services/firestore.service';
 import { Product } from 'src/app/models/product';
 import { DataService } from 'src/app/services/data.service';
 import { AlertService } from 'src/app/shared/alert/alert.service';
+import { CartService } from '../../cart/cart.service';
 
 @Component({
   selector: 'app-product-details',
@@ -27,7 +28,8 @@ export class ProductDetailsComponent implements OnInit {
     private httpService: DataService,
     private fss: FirestoreService,
     private auth: AuthService,
-    public alertService: AlertService
+    public alertService: AlertService,
+    private cartService: CartService
     ) {
       this.product= {
         id: 0,
@@ -46,6 +48,10 @@ export class ProductDetailsComponent implements OnInit {
     this.httpService.getProductById(this.paramId).subscribe(data => {
       this.product = data[0]
     })
+  }
+
+  addToCart(product: Product) {
+    this.cartService.addToCart(product)
   }
 
   addToDoc(product: Product, docName: String) {

@@ -1,5 +1,88 @@
-<main class="layout-margin w-full h-full flex flex-col justify-center gap-4 sm:min-h-[calc(100vh-110px)] p-8 backdrop-blur-[2px]">
-  <div *ngFor="let item of products" class="p-4">
-    <p class="shadow-test w-fit p-4">{{item.name}}</p>
-  </div>
+<main class="layout-margin w-full h-full flex flex-col sm:flex-row justify-center items-start gap-4 sm:min-h-[calc(100vh-110px)] p-8 backdrop-blur-[2px]">
+
+  <!-- cart -->
+  <section class="w-2/3 flex flex-col gap-4">
+
+    <h3 class="text-bdazzledBlue">
+      Products
+    </h3>
+
+    <div 
+      *ngFor="let item of cart" 
+      class="w-full flex justify-start items-center gap-8 p-4 bg-blanchedAlmond rounded mx-2">
+
+      <!-- product image -->
+      <a routerLink='/products/{{item.id}}'>
+        <img 
+        src="https://res.cloudinary.com/do1rqqi7v/image/upload/w_50/{{item.img}}" 
+        alt="/">
+      </a>
+
+      <!-- name / price -->
+      <div class="flex flex-col justify-center items-start">
+        <a 
+          routerLink='/products/{{item.id}}'
+          class="text-xl font-bold w-fit">
+          {{item.name}}
+        </a>
+        <p>
+          <span class="text-sm">EGP</span> {{ item.price }}
+        </p> 
+      </div>
+
+      <!-- qty -->
+      <div class="flex items-center gap-4">
+        <fa-icon 
+          icon="minus" 
+          class="text-2xl cursor-pointer text-slate-600" 
+          *ngIf="item.qty != 1"
+          (click)="setProductQty(item.id, item.qty - 1)"
+          ></fa-icon>
+        <fa-icon 
+          icon="trash-can" 
+          class="text-2xl cursor-pointer text-slate-600" 
+          *ngIf="item.qty == 1"
+          (click)="deleteFromCart(item.id)"></fa-icon>
+
+        <div class="w-[40px] h-[40px] flex justify-center items-center bg-bdazzledBlue rounded-lg">
+          <p class="text-2xl text-white">
+            {{ item.qty }}
+          </p>
+        </div>
+
+        <fa-icon 
+          icon="plus" 
+          class="text-2xl cursor-pointer text-slate-600"
+          (click)="setProductQty(item.id, item.qty + 1)"></fa-icon>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- oreder summary -->
+  <section class="w-1/3">
+
+    <h3 class="text-bdazzledBlue">
+      Order Summary
+    </h3>
+
+    <div class="flex flex-col gap-4 bg-blanchedAlmond p-4">
+      <div class="flex justify-between text-bdazzledBlue bg-blanchedAlmond brightness-90 py-2 px-6 rounded">
+        <p class="text-xl font-bold">
+          Subtotal
+        </p>
+        <p>
+          <span class="text-sm">EGP</span> 12.00
+        </p>        
+      </div>
+
+      <button class="btn-primary">
+        CHECKOUT
+      </button>
+    </div>
+
+  </section>
+
+
 </main>
