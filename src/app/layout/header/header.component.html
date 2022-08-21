@@ -23,14 +23,37 @@
 
   <!-- right pane -->
   <div class="hidden h-full sm:flex flex-auto gap-4 justify-center items-center">
-    <fa-icon 
-      *ngFor="let item of navIcons"
-      [icon]="item.icon" 
-      size="2x" 
-      [routerLink]="item.path"
-      class="cursor-pointer rounded-full"
-      routerLinkActive="animate-pulseFast icon-animate border-8 -translate-y-1">
-    </fa-icon>
+    <div *ngFor="let item of navIcons; last as isLast" class="relative">
+
+      <!-- render all the icon execpte the last one "cart icon" -->
+      <fa-icon
+        *ngIf="!isLast"
+        [icon]="item.icon" 
+        size="2x" 
+        [routerLink]="item.path"
+        class="cursor-pointer rounded-full flex"
+        routerLinkActive="animate-pulseFast icon-animate border-8 -translate-y-1">
+      </fa-icon>
+
+      <!-- render the cart icon only -->
+      <fa-icon
+        *ngIf="isLast"
+        [icon]="item.icon" 
+        size="2x" 
+        [routerLink]="item.path"
+        class="cursor-pointer rounded-full flex"
+        routerLinkActive="animate-pulseFast icon-animate border-8 -translate-y-1">
+      </fa-icon>
+
+      <!-- the cart counter -->
+      <div
+        *ngIf="isLast && cartCount"
+        class="absolute -top-3 -right-3 bg-white text-red-600 font-bold w-6 h-6 rounded-full flex justify-center items-center">
+        <p>
+          {{ cartCount }}
+        </p>
+      </div>
+    </div>
   </div>
 
 </nav>

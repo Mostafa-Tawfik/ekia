@@ -23,7 +23,7 @@ export class WishlistService {
   }
 
 
-  // get the wishlist
+  // get the wishlist from firestore
   async getWishlist(): Promise<Product[]> {
     if(this.currentUser.email) {
       await this.fss.getDoc(this.currentUser.email, 'wishlist')

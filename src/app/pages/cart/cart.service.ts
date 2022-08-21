@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Observable, Subject } from 'rxjs';
 import { Product } from 'src/app/models/product';
 import { LocalStorageService } from 'src/app/services/local-storage.service';
 import { AlertService } from 'src/app/shared/components/alert/alert.service';
@@ -10,11 +11,13 @@ export class CartService {
 
   // a vairable to hold the cart
   cart: any = []
+  cart$: Subject<any> = new Subject<any>()
 
   constructor(
     private localStorage: LocalStorageService,
-    public alertService: AlertService
-  ) {
+    public alertService: AlertService,
+
+    ) {
   }
 
   // get subtotal
@@ -27,7 +30,6 @@ export class CartService {
     }
     this.SaveTheCart()
   }
-
 
   // save the cart on localStorage
   SaveTheCart() {
@@ -42,6 +44,7 @@ export class CartService {
   // get the lastest version of the cart
   getCart() {
     this.cart = this.loadTheCart()
+    this.cart$.next(this.loadTheCart())
     return this.cart
   }
 
@@ -55,7 +58,8 @@ export class CartService {
       // add the cart to the variable
       this.cart.push({...product, qty: 1})
       // save the cart after the new added product
-      this.SaveTheCart() 
+      this.SaveTheCart()
+      this.getCart()
       this.alertService.setAlert(true, 'Product added to cart', true)
     } else {
       this.alertService.setAlert(true, 'Product already in your cart', false)

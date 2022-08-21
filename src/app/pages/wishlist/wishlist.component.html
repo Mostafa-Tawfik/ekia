@@ -7,7 +7,10 @@
 </app-empty-page>
 
 <!-- filled wishlist -->
-<main *ngIf="wishlistProducts.length">
+<main 
+  *ngIf="wishlistProducts.length"
+  class="relative w-full h-full sm:h-[calc(100vh-110px)] bg-blanchedAlmond/60"
+  >
   <div class="layout-margin py-8 text-bdazzledBlue">
     <div class="py-8">
       <div class="flex justify-between">
