@@ -12,6 +12,7 @@ import {
 } from '@angular/fire/auth'
 import { FirestoreService } from './firestore.service'
 import { AlertService } from '../shared/components/alert/alert.service'
+import { Subject } from 'rxjs'
 
 @Injectable({
   providedIn: 'root'
@@ -29,6 +30,10 @@ export class AuthService {
   // init the user by checking on local storage
   currentUser: any = this.loadTheUser()
 
+  // a subject to pass as observable
+  currentUser$: Subject<any> = new Subject<any>()
+  
+
 
   // save the user data into local storage
   saveTheUser(data: any) {
@@ -43,6 +48,7 @@ export class AuthService {
   // get the lastest version of the cart
   getCurrentUser() {
     this.currentUser = this.loadTheUser()
+    this.currentUser$.next(this.loadTheUser())
     return this.currentUser
   }
 
@@ -55,7 +61,6 @@ export class AuthService {
       this.getCurrentUser()
       this.alertService.setAlert(true, `Logged in successfully`, true)
       this.router.navigate([''])
-      setTimeout(()=> window.location.reload(), 1000)
     })
     .catch(err => this.alertService.setAlert(true, err.message, false))
   }
@@ -71,7 +76,6 @@ export class AuthService {
       this.firestore.createDoc(res.user.email)
       this.router.navigate([''])
       this.alertService.setAlert(true, `Logged in successfully`, true)
-      setTimeout(()=> window.location.reload(), 1000)
     })
     .catch(err => this.alertService.setAlert(true, err.message, false))
   }
@@ -86,7 +90,6 @@ export class AuthService {
       this.firestore.createDoc(res.user.email)
       this.router.navigate([''])
       this.alertService.setAlert(true, `Registration completed`, true)
-      setTimeout(()=> window.location.reload(), 1000)
     })
     .catch(err => this.alertService.setAlert(true, err.message, false))
   }
@@ -99,6 +102,5 @@ export class AuthService {
     this.getCurrentUser()
     this.alertService.setAlert(true, `See you soon`, true)
     this.router.navigate([''])
-    setTimeout(()=> window.location.reload(), 1000)
   }
 }

@@ -20,15 +20,13 @@ export class HeaderComponent implements OnInit {
     private headerService: HeaderService,
     private cartService: CartService
     ) {
-      this.cartService.cart$.subscribe(res => console.log(res))
-      this.cartService.cart$.subscribe(res => this.cartCount = res.length)
+      this.cartCount = this.cartService.getCart().length
     }
     
-    
+  
   ngOnInit(): void {
+    this.cartService.cart$.subscribe(res => this.cartCount = res.length)
     this.navItems = this.headerService.navItems
     this.navIcons = this.headerService.navIcons
-
-    // this.cartCount = this.cartService.cart.length
   }
 }

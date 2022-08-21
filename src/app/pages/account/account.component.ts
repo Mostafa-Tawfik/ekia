@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
-import { FirestoreService } from 'src/app/services/firestore.service';
 
 @Component({
   selector: 'app-account',
@@ -12,19 +11,18 @@ export class AccountComponent implements OnInit {
 
   constructor(
     public auth: AuthService,
-    public firestore: FirestoreService
     ) {
       this.user = this.auth.getCurrentUser()
     }
 
   
   ngOnInit(): void {
-    console.log(this.user);
+    this.auth.currentUser$.subscribe(res => this.user = res)
   }
 
   signOut() {
     this.auth.signOut()
-    this.user = this.auth.getCurrentUser()
+    this.auth.currentUser$.subscribe(res => this.user = res)
   }
 
 }

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable, Subject } from 'rxjs';
+import { Subject } from 'rxjs';
 import { Product } from 'src/app/models/product';
 import { LocalStorageService } from 'src/app/services/local-storage.service';
 import { AlertService } from 'src/app/shared/components/alert/alert.service';
@@ -44,7 +44,7 @@ export class CartService {
   // get the lastest version of the cart
   getCart() {
     this.cart = this.loadTheCart()
-    this.cart$.next(this.loadTheCart())
+    this.cart$.next(this.cart)
     return this.cart
   }
 

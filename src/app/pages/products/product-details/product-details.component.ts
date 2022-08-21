@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import { AuthService } from 'src/app/services/auth.service';
 import { Product } from 'src/app/models/product';
 import { DataService } from 'src/app/services/data.service';
 import { AlertService } from 'src/app/shared/components/alert/alert.service';
@@ -20,13 +19,9 @@ export class ProductDetailsComponent implements OnInit {
   // assign param id to a variable
   paramId: number = +this.route.snapshot.paramMap.get('id')!
 
-  // user variable
-  currentUser: any
-
   constructor(
     private route: ActivatedRoute,
     private httpService: DataService,
-    private auth: AuthService,
     public alertService: AlertService,
     private cartService: CartService,
     private wishlistService: WishlistService
@@ -39,9 +34,6 @@ export class ProductDetailsComponent implements OnInit {
       img: '',
       desc: ''
     }
-
-    // get the logged in user details
-    this.currentUser = this.auth.getCurrentUser()
   }
     
   ngOnInit(): void {
