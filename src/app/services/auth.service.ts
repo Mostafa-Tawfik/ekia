@@ -11,7 +11,7 @@ import {
   signInWithPopup,
 } from '@angular/fire/auth'
 import { FirestoreService } from './firestore.service'
-import { AlertService } from '../shared/alert/alert.service'
+import { AlertService } from '../shared/components/alert/alert.service'
 
 @Injectable({
   providedIn: 'root'
@@ -53,8 +53,9 @@ export class AuthService {
     .then(res => {
       this.saveTheUser(res.user)
       this.getCurrentUser()
-      this.router.navigate([''])
       this.alertService.setAlert(true, `Logged in successfully`, true)
+      this.router.navigate([''])
+      setTimeout(()=> window.location.reload(), 1000)
     })
     .catch(err => this.alertService.setAlert(true, err.message, false))
   }
@@ -70,6 +71,7 @@ export class AuthService {
       this.firestore.createDoc(res.user.email)
       this.router.navigate([''])
       this.alertService.setAlert(true, `Logged in successfully`, true)
+      setTimeout(()=> window.location.reload(), 1000)
     })
     .catch(err => this.alertService.setAlert(true, err.message, false))
   }
@@ -84,6 +86,7 @@ export class AuthService {
       this.firestore.createDoc(res.user.email)
       this.router.navigate([''])
       this.alertService.setAlert(true, `Registration completed`, true)
+      setTimeout(()=> window.location.reload(), 1000)
     })
     .catch(err => this.alertService.setAlert(true, err.message, false))
   }
@@ -94,7 +97,8 @@ export class AuthService {
     signOut(this.auth)
     localStorage.removeItem('auth')
     this.getCurrentUser()
-    this.router.navigate([''])
     this.alertService.setAlert(true, `See you soon`, true)
+    this.router.navigate([''])
+    setTimeout(()=> window.location.reload(), 1000)
   }
 }

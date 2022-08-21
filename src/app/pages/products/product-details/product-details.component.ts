@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { AuthService } from 'src/app/services/auth.service';
-import { FirestoreService } from 'src/app/services/firestore.service';
 
+import { AuthService } from 'src/app/services/auth.service';
 import { Product } from 'src/app/models/product';
 import { DataService } from 'src/app/services/data.service';
-import { AlertService } from 'src/app/shared/alert/alert.service';
+import { AlertService } from 'src/app/shared/components/alert/alert.service';
 import { CartService } from '../../cart/cart.service';
+import { WishlistService } from '../../wishlist/wishlist.service';
 
 @Component({
   selector: 'app-product-details',
@@ -21,44 +21,53 @@ export class ProductDetailsComponent implements OnInit {
   paramId: number = +this.route.snapshot.paramMap.get('id')!
 
   // user variable
-  user: any
-  
+  currentUser: any
+
   constructor(
     private route: ActivatedRoute,
     private httpService: DataService,
-    private fss: FirestoreService,
     private auth: AuthService,
     public alertService: AlertService,
-    private cartService: CartService
+    private cartService: CartService,
+    private wishlistService: WishlistService
     ) {
-      this.product= {
-        id: 0,
-        name: '',
-        category: '',
-        price: 0,
-        img: '',
-        desc: ''
-      }
-      // get the logged in user details
-      this.user = this.auth.currentUser
+    this.product= {
+      id: 0,
+      name: '',
+      category: '',
+      price: 0,
+      img: '',
+      desc: ''
     }
+
+    // get the logged in user details
+    this.currentUser = this.auth.getCurrentUser()
+  }
     
   ngOnInit(): void {
     // get product details
     this.httpService.getProductById(this.paramId).subscribe(data => {
       this.product = data[0]
-    })
+    })      
   }
 
+  // add to cart in localstorage
   addToCart(product: Product) {
     this.cartService.addToCart(product)
   }
 
-  addToDoc(product: Product, docName: String) {
-    if(this.user.email) {
-      this.fss.addToDoc(product, this.user.email, docName)
-    } else {
-      this.alertService.setAlert(true, 'Please sign in to continue', false)
-    }
+  // add to wishlist in firestore
+  addToWishlist(product: Product) {
+    this.wishlistService.addToWishlist(product)
+  }
+
+  // check if product already in wishlist
+  checkInWishlist(productId: number) {
+    return this.wishlistService.checkInWishlist(productId)
+  }
+
+  // remove product from wishlist
+  removeFromWishlist(product: Product) {
+    return this.wishlistService.removeFromWishlist(product)
   }
 }

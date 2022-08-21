@@ -92,17 +92,28 @@
           <!-- add to cart -->
           <button 
             (click)="addToCart(product)"
-            class="btn-primary text-md gap-2">
-            Add to bag
+            class="btn-primary w-fit">
+            Add to cart
           </button>
   
           <!-- add to wishlist -->
-          <fa-icon 
-            (click)="addToDoc(product, 'wishlist')"
-            icon="heart-circle-plus" 
-            size="3x" 
-            class="cursor-pointer text-bdazzledBlue hover:scale-110 hover:saturate-200 duration-300 motion-safe:hover:animate-spin-fast">
-          </fa-icon>
+          <button
+            *ngIf="checkInWishlist(product.id)"
+            (click)="removeFromWishlist(product)">
+            <img 
+              src="https://api.iconify.design/ant-design/heart-filled.svg?color=%23336996" alt="/" 
+              class="w-[55px] cursor-pointer text-bdazzledBlue hover:scale-110 hover:saturate-200 duration-300 motion-safe:hover:animate-spin-fast">
+          </button>
+
+          <!-- remove form wishlist -->
+          <button
+            *ngIf="!checkInWishlist(product.id)"
+            (click)="addToWishlist(product)">
+            <img 
+              src="https://api.iconify.design/ant-design/heart-outlined.svg?color=%23336996" alt="/" 
+              class="w-[55px] cursor-pointer text-bdazzledBlue hover:scale-110 hover:saturate-200 duration-300 motion-safe:hover:animate-spin-fast">
+          </button>
+
         </div>
       </section>
 

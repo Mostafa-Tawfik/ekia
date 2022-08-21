@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FirestoreService } from 'src/app/services/firestore.service';
 
 import { Category } from 'src/app/models/category';
 import { Product } from 'src/app/models/product';
@@ -17,7 +16,6 @@ export class ProductsComponent implements OnInit {
   cateoryActivated: string = ''
 
   constructor(
-    public fss: FirestoreService,
     private httpService: DataService
     ) {}
 

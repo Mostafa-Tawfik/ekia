@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { doc, setDoc, Firestore, getDoc, arrayUnion, updateDoc, arrayRemove } from '@angular/fire/firestore';
 
 import { Product } from 'src/app/models/product';
-import { AlertService } from '../shared/alert/alert.service';
+import { AlertService } from '../shared/components/alert/alert.service';
 
 @Injectable({
   providedIn: 'root'
@@ -40,8 +40,7 @@ export class FirestoreService {
     await updateDoc(doc(this.db, 'users', userEmail), {
       [docName]: arrayRemove(product)
     })
-    this.alertService.setAlert(true, `Deleted successfuly!`, true)
-    setTimeout(()=> window.location.reload(), 0)
+    this.alertService.setAlert(true, `Product removed from ${docName}!`, true)
   }
 
   
