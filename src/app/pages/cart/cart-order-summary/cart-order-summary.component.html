@@ -4,16 +4,51 @@
     Order Summary
   </h3>
 
-  <div class="flex flex-col gap-4 bg-blanchedAlmond p-4">
-    <div class="flex justify-between text-bdazzledBlue bg-blanchedAlmond brightness-90 py-2 px-6 rounded">
+  <div class="flex flex-col bg-blanchedAlmond p-4 my-4">
+
+    <!-- subtotal -->
+    <div class="flex justify-between text-bdazzledBlue bg-blanchedAlmond px-6 rounded">
       <p class="text-xl font-bold">
         Subtotal
       </p>
-      <p>
-        <span class="text-sm">EGP</span> {{cartSubtotal}}
-      </p>        
+      <p><span class="text-sm">EGP</span> {{cartSubtotal}}.00</p>        
     </div>
 
+    <!-- discount -->
+    <div class="flex justify-between text-red-600 bg-blanchedAlmond px-6 rounded">
+      <p class="text-xl font-bold">
+        Discount
+      </p>
+      <p class="text-left"><span class="text-sm">EGP</span> -0.00</p>        
+    </div>
+
+    <hr class="bg-goldenBrown h-[2px] my-4">
+
+    <!-- subtotal after discount -->
+    <div class="flex justify-between text-bdazzledBlue bg-blanchedAlmond px-6 rounded">
+      <p class="text-xl font-bold">
+        Subtotal
+      </p>
+      <p><span class="text-sm">EGP</span> {{cartSubtotal}}.00</p>        
+    </div>
+
+    <!-- shipping -->
+    <div class="flex justify-between text-bdazzledBlue bg-blanchedAlmond px-6 rounded">
+      <p class="text-xl font-bold">
+        Shipping
+      </p>
+      <p class="text-left"><span class="text-sm">EGP</span> 0.00</p>        
+    </div>
+
+    <!-- grand total -->
+    <div class="flex justify-between text-bdazzledBlue bg-blanchedAlmond brightness-90 my-4 py-2 px-6 rounded">
+      <p class="text-xl font-bold">
+        Total
+      </p>
+      <p><span class="text-sm">EGP</span> {{cartSubtotal}}.00</p>        
+    </div>
+
+    <!-- checkout btn -->
     <button class="btn-primary mx-auto sm:mx-0">
       CHECKOUT
     </button>
