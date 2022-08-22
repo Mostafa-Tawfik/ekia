@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 
 import { Product } from 'src/app/models/product';
-import { AuthService } from 'src/app/services/auth.service';
-import { FirestoreService } from 'src/app/services/firestore.service';
+import { AuthService } from 'src/app/auth/auth.service';
+import { FirestoreService } from 'src/app/core/services/firestore.service';
 import { AlertService } from 'src/app/shared/components/alert/alert.service';
 
 @Injectable({

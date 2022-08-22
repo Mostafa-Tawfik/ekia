@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from 'src/app/services/auth.service';
+import { AuthService } from 'src/app/auth/auth.service';
 import { AlertService } from 'src/app/shared/components/alert/alert.service';
 
 @Component({

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { MobileNav } from 'src/app/models/mobile-nav';
-import { AuthService } from 'src/app/services/auth.service';
-import { NavItems } from '../../models/navItems';
+import { MobileNav } from 'src/app/layout/models/mobile-nav';
+import { AuthService } from 'src/app/auth/auth.service';
+import { NavItems } from '../models/navItems';
 
 @Injectable({
   providedIn: 'root'

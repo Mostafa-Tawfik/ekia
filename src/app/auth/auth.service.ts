@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core'
 import { Router } from '@angular/router'
 
-import { LocalStorageService } from './local-storage.service'
+import { LocalStorageService } from '../core/services/local-storage.service'
 import {
   Auth,
   createUserWithEmailAndPassword,
@@ -10,7 +10,7 @@ import {
   GoogleAuthProvider,
   signInWithPopup,
 } from '@angular/fire/auth'
-import { FirestoreService } from './firestore.service'
+import { FirestoreService } from '../core/services/firestore.service'
 import { AlertService } from '../shared/components/alert/alert.service'
 import { Subject } from 'rxjs'
 

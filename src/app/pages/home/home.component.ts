@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Category } from 'src/app/models/category';
-import { DataService } from 'src/app/services/data.service';
+import { DataService } from 'src/app/core/services/data.service';
 
 @Component({
   selector: 'app-home',

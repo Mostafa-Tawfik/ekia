@@ -34,7 +34,7 @@ export class FontAwesomeLibraryModule {
       faCircleCheck,
       faPlus,
       faMinus,
-      faTrashCan
+      faTrashCan,
     )
   }
  }

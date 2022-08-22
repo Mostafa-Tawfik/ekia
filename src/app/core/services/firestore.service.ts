@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { doc, setDoc, Firestore, getDoc, arrayUnion, updateDoc, arrayRemove } from '@angular/fire/firestore';
 
 import { Product } from 'src/app/models/product';
-import { AlertService } from '../shared/components/alert/alert.service';
+import { AlertService } from '../../shared/components/alert/alert.service';
 
 @Injectable({
   providedIn: 'root'

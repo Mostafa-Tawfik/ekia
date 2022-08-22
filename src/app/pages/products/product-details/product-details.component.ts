@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { Product } from 'src/app/models/product';
-import { DataService } from 'src/app/services/data.service';
+import { DataService } from 'src/app/core/services/data.service';
 import { AlertService } from 'src/app/shared/components/alert/alert.service';
 import { CartService } from '../../cart/cart.service';
 import { WishlistService } from '../../wishlist/wishlist.service';

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
-import { MobileNav } from 'src/app/models/mobile-nav';
+import { MobileNav } from 'src/app/layout/models/mobile-nav';
 import { CartService } from 'src/app/pages/cart/cart.service';
-import { NavItems } from '../../models/navItems';
+import { NavItems } from '../models/navItems';
 import { HeaderService } from './header.service';
 
 @Component({

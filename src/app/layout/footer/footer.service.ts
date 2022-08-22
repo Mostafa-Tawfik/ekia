@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Footer } from '../../models/footer';
+import { Footer } from '../models/footer';
 
 @Injectable({
   providedIn: 'root'

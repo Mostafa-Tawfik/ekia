@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 
 import { Product } from 'src/app/models/product';
-import { LocalStorageService } from 'src/app/services/local-storage.service';
+import { LocalStorageService } from 'src/app/core/services/local-storage.service';
 import { AlertService } from 'src/app/shared/components/alert/alert.service';
 
 @Injectable({
