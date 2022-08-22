@@ -21,6 +21,7 @@ import { AboutModule } from './pages/about/about.module';
 import { AuthModule } from './auth/auth.module';
 import { WishlistModule } from './pages/wishlist/wishlist.module';
 import { SharedModule } from './shared/shared.module';
+import { CheckoutModule } from './pages/checkout/checkout.module';
 
 
 @NgModule({
@@ -43,6 +44,7 @@ import { SharedModule } from './shared/shared.module';
     AccountModule,
     CartModule,
     WishlistModule,
+    CheckoutModule,
   ],
   providers: [
     { provide: PERSISTENCE, useValue: 'session' },

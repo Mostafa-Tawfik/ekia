@@ -10,8 +10,9 @@ export class CartComponent implements OnInit {
   cart: any = []
   cartSubtotal: number = 0
 
+
   constructor(
-    private cartSevice: CartService
+    private cartSevice: CartService,
   ) {
     this.cart = this.cartSevice.getCart()
     this.cartSubtotal = this.cartSevice.cartSubtotal()

@@ -3,15 +3,11 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
+    // lazy load products page
     path: 'products',
     loadChildren: ()=> import('./pages/products/products.module').then(m => m.ProductsModule)
   }
-  // {
-  //   // wildcard
-  //   path: '**',
-  //   component: HomeComponent,
-  // },
-];
+]
 
 @NgModule({
   imports: [
