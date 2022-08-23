@@ -1,29 +1,29 @@
-<main class="relative w-full h-full sm:h-[calc(100vh-110px)] bg-blanchedAlmond/60 mb-8 sm:mb-0">
+<main class="relative w-full h-full 2xl:min-h-screen bg-blanchedAlmond/60 mb-8 sm:mb-0">
 
-  <div class="h-full flex flex-col sm:flex-row gap-4">
+  <div class="h-full 2xl:min-h-screen flex flex-col sm:flex-row gap-4">
 
     <!-- product image -->
-    <div class="sm:w-1/2 h-full flex justify-center items-center bg-earthYellow">
-      <img 
-      src="https://res.cloudinary.com/do1rqqi7v/image/upload/w_500/{{product.img}}" 
+    <div class="sm:w-1/2 flex justify-center items-center bg-earthYellow">
+      <img
+      src="https://res.cloudinary.com/do1rqqi7v/image/upload/w_500/{{product.img}}"
       alt="/"
       class="sm:w-1/2 object-cover object-top"
       >
     </div>
 
     <!-- right pane -->
-    <div class="sm:w-1/2 flex flex-col justify-center items-start px-4 lg:px-8 xl:px-32">
+    <div class="sm:w-1/2 h-full 2xl:h-screen flex flex-col justify-center items-start sm:py-8 px-4 lg:px-8 xl:px-32">
 
       <!-- main details -->
       <section class="flex flex-col justify-center items-start gap-2">
         <h2 class="text-5xl font-extrabold text-bdazzledBlue">
           {{product.name}}
         </h2>
-  
+
         <p class="-mt-2">{{product.category}}</p>
-  
+
         <hr class="h-[3px] bg-bdazzledBlue">
-  
+
         <p class="xl:w-3/4">{{product.desc}}</p>
       </section>
 
@@ -34,7 +34,7 @@
         <h3 class="text-4xl tracking-tight font-extrabold text-bdazzledBlue mb-4">
           Specifications
         </h3>
-  
+
         <div class="xl:w-3/4 flex items-center gap-8">
           <h4 class="w-2/5 xl:w-1/2 text-xl font-extrabold text-bdazzledBlue">
             Material
@@ -43,7 +43,7 @@
             Layer-glued wood veneer
           </p>
         </div>
-  
+
         <div class="xl:w-3/4 flex items-center gap-8">
           <h4 class="w-2/5 xl:w-1/2 text-xl font-extrabold text-bdazzledBlue">
             Frame
@@ -52,7 +52,7 @@
             Plywood - Laminated veneer lumber
           </p>
         </div>
-  
+
         <div class="xl:w-3/4 flex items-center gap-8">
           <h4 class="w-2/5 xl:w-1/2 text-xl font-extrabold text-bdazzledBlue">
             Dimensions
@@ -61,7 +61,7 @@
             140 x 200 x 33 cm
           </p>
         </div>
-  
+
         <div class="xl:w-3/4 flex items-center gap-8">
           <h4 class="w-2/5 xl:w-1/2 text-xl font-extrabold text-bdazzledBlue">
             Colors
@@ -82,26 +82,26 @@
             <span class="text-lg">EGP</span>
             {{product.price}}
           </p>
-    
+
           <hr class="h-[3px] bg-goldenBrown">
-        </div>  
-  
+        </div>
+
         <!-- buttons -->
         <div class="w-full flex items-center justify-center sm:justify-start gap-4">
-  
+
           <!-- add to cart -->
-          <button 
+          <button
             (click)="addToCart(product)"
             class="btn-primary w-fit">
             Add to cart
           </button>
-  
+
           <!-- add to wishlist -->
           <button
             *ngIf="checkInWishlist(product.id)"
             (click)="removeFromWishlist(product)">
-            <img 
-              src="https://api.iconify.design/ant-design/heart-filled.svg?color=%23336996" alt="/" 
+            <img
+              src="https://api.iconify.design/ant-design/heart-filled.svg?color=%23336996" alt="/"
               class="w-[55px] cursor-pointer text-bdazzledBlue hover:scale-110 hover:saturate-200 duration-300 motion-safe:hover:animate-spin-fast">
           </button>
 
@@ -109,8 +109,8 @@
           <button
             *ngIf="!checkInWishlist(product.id)"
             (click)="addToWishlist(product)">
-            <img 
-              src="https://api.iconify.design/ant-design/heart-outlined.svg?color=%23336996" alt="/" 
+            <img
+              src="https://api.iconify.design/ant-design/heart-outlined.svg?color=%23336996" alt="/"
               class="w-[55px] cursor-pointer text-bdazzledBlue hover:scale-110 hover:saturate-200 duration-300 motion-safe:hover:animate-spin-fast">
           </button>
 
