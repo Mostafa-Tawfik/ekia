@@ -1,5 +1,5 @@
 <!-- empty cart -->
-<app-empty-page 
+<app-empty-page
   *ngIf="!cart.length"
   img="https://api.iconify.design/noto/shopping-cart.svg"
   msg="Your cart is empty!"
@@ -7,7 +7,7 @@
 </app-empty-page>
 
 <!-- filled cart -->
-<main 
+<main
   *ngIf="cart.length"
   class="layout-margin w-full min-h-[calc(100vh-70px)] flex flex-col sm:flex-row justify-start sm:justify-center items-start gap-4 sm:min-h-[calc(100vh-110px)] p-8 backdrop-blur-[2px]">
 
@@ -18,45 +18,45 @@
       Products
     </h3>
 
-    <div 
-      *ngFor="let item of cart" 
+    <div
+      *ngFor="let item of cart"
       class="w-full flex justify-start items-center gap-8 p-4 bg-blanchedAlmond rounded mx-2">
 
       <!-- product image -->
       <a routerLink='/products/{{item.id}}'>
-        <img 
-        src="https://res.cloudinary.com/do1rqqi7v/image/upload/w_50/{{item.img}}" 
+        <img
+        src="https://res.cloudinary.com/do1rqqi7v/image/upload/w_50/{{item.img}}"
         alt="/">
       </a>
 
       <!-- name / price -->
       <div class="flex flex-col justify-center items-start">
-        <a 
+        <a
           routerLink='/products/{{item.id}}'
           class="text-xl font-bold w-fit">
           {{item.name}}
         </a>
         <p>
           <span class="text-sm">EGP</span> {{ item.price * item.qty }}
-        </p> 
+        </p>
       </div>
 
       <!-- qty -->
       <div class="flex items-center gap-4 ml-auto">
-        <fa-icon 
-          icon="minus" 
-          class="text-2xl cursor-pointer text-slate-600 select-none" 
+        <fa-icon
+          icon="minus"
+          class="text-2xl cursor-pointer text-slate-600 select-none"
           *ngIf="item.qty > 1"
           (click)="setProductQty(item.id, item.qty - 1)"
           ></fa-icon>
-        <fa-icon 
-          icon="trash-can" 
-          class="text-2xl cursor-pointer text-slate-600 select-none" 
+        <fa-icon
+          icon="trash-can"
+          class="text-2xl cursor-pointer text-slate-600 select-none"
           *ngIf="item.qty <= 1"
           (click)="deleteFromCart(item.id)"></fa-icon>
 
         <!-- qty input -->
-        <input 
+        <input
           #qtyInput="ngModel"
           [ngModel]="item.qty"
           type="text"
@@ -65,8 +65,8 @@
           class="w-[50px] h-[40px] text-center bg-bdazzledBlue text-white text-2xl rounded-lg"
           >
 
-        <fa-icon 
-          icon="plus" 
+        <fa-icon
+          icon="plus"
           class="text-2xl cursor-pointer text-slate-600 select-none"
           (click)="setProductQty(item.id, item.qty + 1)"></fa-icon>
       </div>

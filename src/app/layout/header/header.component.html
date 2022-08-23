@@ -1,13 +1,13 @@
 <nav class="w-full h-[70px] sm:h-[110px] flex justify-around sm:relative items-center bg-gradient-to-r from-goldenBrown to-fieldDarb text-white border-b-2 border-white z-40">
 
   <!-- left pane -->
-  <div 
-    routerLink="/home" 
+  <div
+    routerLink="/home"
     class="relative h-full flex-auto flex items-center justify-center border-x-[1px] sm:border-none border-blanchedAlmond border-opacity-10 z-40">
-    <img 
-      src="../../assets/logo.png" 
-      alt="logo" 
-      class="w-[40px] h-[40px]">    
+    <img
+      src="https://api.iconify.design/mdi/alpha-e-box.svg?color=white"
+      alt="logo"
+      class="w-[50px] h-[50px] cursor-pointer">
 
     <h1 class="text-3xl font-bold cursor-pointer">
       KIA
@@ -28,8 +28,8 @@
       <!-- render all the icon execpte the last one "cart icon" -->
       <fa-icon
         *ngIf="!isLast"
-        [icon]="item.icon" 
-        size="2x" 
+        [icon]="item.icon"
+        size="2x"
         [routerLink]="item.path"
         class="cursor-pointer rounded-full flex"
         routerLinkActive="animate-pulseFast icon-animate border-8 -translate-y-1">
@@ -38,8 +38,8 @@
       <!-- render the cart icon only -->
       <fa-icon
         *ngIf="isLast"
-        [icon]="item.icon" 
-        size="2x" 
+        [icon]="item.icon"
+        size="2x"
         [routerLink]="item.path"
         class="cursor-pointer rounded-full flex"
         routerLinkActive="animate-pulseFast icon-animate border-8 -translate-y-1">
