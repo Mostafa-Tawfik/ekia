@@ -1,7 +1,9 @@
 <main class="layout-margin w-full min-h-[calc(100vh-70px)] flex flex-col sm:flex-row justify-start sm:justify-center items-start gap-4 sm:min-h-[calc(100vh-110px)] p-8 backdrop-blur-[2px]">
 
   <!-- checkout details -->
-  <section class="sm:w-2/3 flex flex-col gap-12">
+  <section
+    *ngIf="!isOrderPlaced"
+    class="sm:w-2/3 flex flex-col gap-12">
 
     <!-- personal info -->
     <app-checkout-personal-info></app-checkout-personal-info>
@@ -23,5 +25,13 @@
     </button>
 
   </section>
+
+  <!-- successful order msg -->
+  <app-empty-page
+    *ngIf="isOrderPlaced"
+    img="https://api.iconify.design/bi/bag-check-fill.svg?color=green"
+    msg="Enjoy your order"
+  >
+  </app-empty-page>
 
 </main>

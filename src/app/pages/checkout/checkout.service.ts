@@ -37,7 +37,6 @@ export class CheckoutService {
   // generate a new order
   async setOrder() {
     await this.fss.addToDoc(this.order, this.currentUser.email, 'orders')
-    .then(res => alert('done'))
   }
 
   // set order section
