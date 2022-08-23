@@ -46,20 +46,24 @@
         <fa-icon 
           icon="minus" 
           class="text-2xl cursor-pointer text-slate-600 select-none" 
-          *ngIf="item.qty != 1"
+          *ngIf="item.qty > 1"
           (click)="setProductQty(item.id, item.qty - 1)"
           ></fa-icon>
         <fa-icon 
           icon="trash-can" 
           class="text-2xl cursor-pointer text-slate-600 select-none" 
-          *ngIf="item.qty == 1"
+          *ngIf="item.qty <= 1"
           (click)="deleteFromCart(item.id)"></fa-icon>
 
-        <div class="w-[40px] h-[40px] flex justify-center items-center bg-bdazzledBlue rounded-lg">
-          <p class="text-2xl text-white">
-            {{ item.qty }}
-          </p>
-        </div>
+        <!-- qty input -->
+        <input 
+          #qtyInput="ngModel"
+          [ngModel]="item.qty"
+          type="text"
+          name="qty"
+          (ngModelChange)="setProductQty(item.id, +qtyInput.value)"
+          class="w-[50px] h-[40px] text-center bg-bdazzledBlue text-white text-2xl rounded-lg"
+          >
 
         <fa-icon 
           icon="plus" 

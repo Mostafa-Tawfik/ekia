@@ -1,0 +1,76 @@
+<div>
+  <!-- header -->
+  <div class="flex gap-4 items-start">
+    <img src="https://api.iconify.design/bi/2-circle-fill.svg" alt="1" class="w-[50px]">
+    <div>
+      <h3 class="text-fieldDarb">Shipping</h3>
+      <p class="mt-2">where you want to recived your shippment</p>
+    </div>
+  </div>
+
+  <!-- shipping form -->
+  <form 
+    action="" 
+    class="sm:px-[66px] p-8 my-4 flex flex-col gap-4 bg-black/75 text-white rounded-xl shadow-[0px_0px_5px_5px] shadow-blanchedAlmond drop-shadow">
+
+    <!-- address -->
+    <div class="w-full sm:mt-4">
+      <label for="address" class="text-xl m-2">
+        Address
+      </label>
+      <textarea 
+        name="address"
+        id="address"
+        cols="5"
+        rows="3" 
+        required
+        autocomplete
+        autofocus
+        maxlength="150"
+        class="text-black rounded-3xl w-full p-4"></textarea>
+    </div>
+
+    <!-- City -->
+    <div class="w-full">
+      <label for="city" class="text-xl m-2">
+        City
+      </label>
+      <input 
+        id="city"
+        type="text"
+        name="city"
+        required
+        autocomplete
+        class="text-black rounded-3xl w-full p-4">
+    </div>
+
+    <!-- Postal Code -->
+    <div class="w-full">
+      <label for="postalCode" class="text-xl m-2">
+        Postal Code
+      </label>
+      <input 
+        id="postalCode"
+        type="text"
+        name="postalCode"
+        required
+        autocomplete
+        class="text-black rounded-3xl w-full p-4">
+    </div>
+
+    <!-- country -->
+    <div class="w-full">
+      <label for="country" class="text-xl m-2">
+        Country
+      </label>
+      <input 
+        id="country"
+        type="text"
+        name="country"
+        required
+        autocomplete
+        class="text-black rounded-3xl w-full p-4">
+    </div>
+
+  </form>
+</div>
