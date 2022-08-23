@@ -9,8 +9,8 @@
   </div>
 
   <!-- personal info form -->
-  <form 
-    action="" 
+  <form
+    action=""
     class="sm:px-[66px] my-4 py-12 flex flex-col gap-4 bg-black/75 text-white rounded-xl shadow-[0px_0px_5px_5px] shadow-blanchedAlmond drop-shadow">
 
     <div class="flex flex-col sm:flex-row px-4 sm:px-0 gap-2 sm:gap-8">
@@ -19,7 +19,9 @@
         <label for="firstName" class="text-xl m-2">
           First name
         </label>
-        <input 
+        <input
+          [(ngModel)]="personalInfo.firstName"
+          (ngModelChange)="setPersonalInfo()"
           id="firstName"
           type="text"
           name="firstName"
@@ -33,7 +35,9 @@
         <label for="lastName" class="text-xl m-2">
           Last name
         </label>
-        <input 
+        <input
+          [(ngModel)]="personalInfo.lastName"
+          (ngModelChange)="setPersonalInfo()"
           id="lastName"
           type="text"
           name="lastName"
@@ -49,7 +53,9 @@
         <label for="email" class="text-xl m-2">
           Email
         </label>
-        <input 
+        <input
+          [(ngModel)]="personalInfo.email"
+          (ngModelChange)="setPersonalInfo()"
           id="email"
           type="text"
           name="email"
@@ -57,13 +63,15 @@
           autocomplete
           class="text-black rounded-3xl w-full p-4">
       </div>
-      
+
       <!-- mobile -->
       <div class="w-full">
         <label for="mobile" class="text-xl m-2">
           Mobile number
         </label>
-        <input 
+        <input
+          [(ngModel)]="personalInfo.mobile"
+          (ngModelChange)="setPersonalInfo()"
           id="mobile"
           type="tel"
           name="mobile"
@@ -71,7 +79,7 @@
           autocomplete
           class="text-black rounded-3xl w-full p-4">
       </div>
-    </div>  
+    </div>
 
   </form>
 </div>

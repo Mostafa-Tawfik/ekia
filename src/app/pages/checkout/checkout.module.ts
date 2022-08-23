@@ -5,6 +5,7 @@ import { CheckoutRoutingModule } from './checkout-routing.module';
 import { CheckoutShippingComponent } from './checkout-shipping/checkout-shipping.component';
 import { CheckoutPersonalInfoComponent } from './checkout-personal-info/checkout-personal-info.component';
 import { CheckoutPaymentComponent } from './checkout-payment/checkout-payment.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -17,6 +18,7 @@ import { CheckoutPaymentComponent } from './checkout-payment/checkout-payment.co
   ],
   imports: [
     CommonModule,
+    FormsModule,
     CheckoutRoutingModule
   ]
 })
