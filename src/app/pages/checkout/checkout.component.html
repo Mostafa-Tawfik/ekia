@@ -2,7 +2,7 @@
 
   <!-- checkout details -->
   <section class="sm:w-2/3 flex flex-col gap-12">
-    
+
     <!-- personal info -->
     <app-checkout-personal-info></app-checkout-personal-info>
 
@@ -13,12 +13,15 @@
     <app-checkout-payment></app-checkout-payment>
 
     <!-- submit btn -->
-    <button 
+    <button
       type="submit"
-      class="btn-primary w-fit mx-auto mb-8">
+      [disabled]="!isPaymentValid"
+      (click)="generateOrder()"
+      [ngClass]="isPaymentValid ? 'btn-primary bg-goldenBrown' : 'btn-disabled'"
+      class="w-fit mx-auto mb-8">
       Place order
     </button>
 
   </section>
-  
+
 </main>

@@ -43,7 +43,7 @@ export class WishlistService {
 
   // check if the product already in the wishlist
   checkInWishlist(productId: number) {
-    return this.wishlistProducts.map((i: Product) => i.id).includes(productId)    
+    return this.wishlistProducts.map((i: Product) => i.id).includes(productId)
   }
 
   // add to wishlist
@@ -51,6 +51,7 @@ export class WishlistService {
     if(this.currentUser.email) {
       this.fss.addToDoc(product, this.currentUser.email, 'wishlist')
       this.getWishlist()
+      this.alertService.setAlert(true, `Product added to wishlist!`, true)
     } else {
       this.alertService.setAlert(true, 'Please sign in to continue', false)
     }
@@ -60,5 +61,6 @@ export class WishlistService {
   removeFromWishlist(product: Product) {
     this.fss.deleteDoc(product, this.currentUser.email, 'wishlist')
     this.getWishlist()
+    this.alertService.setAlert(true, `Product removed from wishlist!`, true)
   }
 }

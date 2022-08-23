@@ -10,7 +10,7 @@
 
   <!-- personal info form -->
   <form
-    action=""
+    #personalInfoForm = "ngForm"
     class="sm:px-[66px] my-4 py-12 flex flex-col gap-4 bg-black/75 text-white rounded-xl shadow-[0px_0px_5px_5px] shadow-blanchedAlmond drop-shadow">
 
     <div class="flex flex-col sm:flex-row px-4 sm:px-0 gap-2 sm:gap-8">
@@ -80,6 +80,16 @@
           class="text-black rounded-3xl w-full p-4">
       </div>
     </div>
+
+    <!-- submit btn -->
+    <button
+      type="submit"
+      (click)="setPersonalInfoValid()"
+      [disabled]="personalInfoForm.invalid"
+      [ngClass]="personalInfoForm.valid ? 'btn-primary bg-goldenBrown' : 'btn-disabled'"
+      class="w-fit ml-auto mt-4">
+      Next
+    </button>
 
   </form>
 </div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CheckoutService } from '../checkout.service';
 
 @Component({
   selector: 'app-checkout-payment',
@@ -6,9 +7,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CheckoutPaymentComponent implements OnInit {
 
-  constructor() { }
+  isShippmentValid: boolean = false
 
-  ngOnInit(): void {
+  paymentDetails = {
+    'paymentMethod':  '',
   }
 
+  constructor(
+    private checkoutService: CheckoutService
+  ) { }
+
+  ngOnInit(): void {
+    // watch for shipping details validation
+    this.checkoutService.isShippmentValid$.subscribe(res => this.isShippmentValid = res)
+  }
+
+  setPaymentDetails() {
+    this.checkoutService.setOrderSection('paymentDetails', this.paymentDetails)
+    this.checkoutService.isPaymentValid$.next(true)
+  }
 }

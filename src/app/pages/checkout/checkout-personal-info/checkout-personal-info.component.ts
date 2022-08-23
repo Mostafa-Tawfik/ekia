@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { CheckoutService } from '../checkout.service';
-import { PersonalInfo } from '../models/personal-info';
 
 @Component({
   selector: 'app-checkout-personal-info',
@@ -8,24 +7,26 @@ import { PersonalInfo } from '../models/personal-info';
 })
 export class CheckoutPersonalInfoComponent implements OnInit {
 
-  personalInfo: PersonalInfo = {
+  personalInfo = {
     'firstName':  '',
     'lastName': '',
     'email':  '',
     'mobile': 0
   }
 
-
   constructor(
-    private checkout: CheckoutService
+    private checkoutService: CheckoutService
   ) {}
 
   ngOnInit(): void {
   }
 
   setPersonalInfo() {
-    this.checkout.setPersonalInfo('personalInfo', this.personalInfo)
-    console.log(this.checkout.order);
+    this.checkoutService.setOrderSection('personalInfo', this.personalInfo)
+  }
+
+  setPersonalInfoValid() {
+    this.checkoutService.isPersonalInfoValid$.next(true)
   }
 
 }

@@ -10,28 +10,28 @@
           Sign In
         </h1>
 
-        <form 
+        <form
           class='w-full flex flex-col py-4'
           (ngSubmit)="signIn()"
           #loginForm = "ngForm"
           >
 
           <!-- email input -->
-          <input 
-            class='p-4 my-2 bg-white rounded-3xl text-black z-10 placeholder:\01F4E7' 
+          <input
+            class='p-4 my-2 bg-white rounded-3xl text-black z-10 placeholder:\01F4E7'
             [(ngModel)] = "email"
             #loginEmail = "ngModel"
             name="email"
             email="true"
-            placeholder='📧 Enter your email address' 
+            placeholder='📧 Enter your email address'
             autoComplete='email'
             required
             >
 
-          <div 
+          <div
             class="w-fit text-red-600 bg-white text-xs px-4 py-1 mx-auto -mt-3 rounded-b-xl duration-700 transition-all z-0"
-            [ngClass]="loginEmail.invalid && (loginEmail.dirty || loginEmail.touched) 
-              ? 'translate-y-0 duration-700 transition-all' 
+            [ngClass]="loginEmail.invalid && (loginEmail.dirty || loginEmail.touched)
+              ? 'translate-y-0 duration-700 transition-all'
               : 'invisible -translate-y-10 duration-700 transition-all'"
             >
             <p *ngIf="loginEmail.errors?.['required']">
@@ -43,22 +43,22 @@
           </div>
 
           <!-- password input -->
-          <input 
+          <input
             class='p-4 my-2 bg-white rounded-3xl text-black z-10'
             [(ngModel)] = "password"
             #loginPassword = "ngModel"
             name="password"
-            type="password" 
-            placeholder='🔒 Enter your password' 
+            type="password"
+            placeholder='🔒 Enter your password'
             autoComplete='current-password'
             required
             minlength="6"
             />
 
-          <div 
+          <div
             class="w-fit text-red-600 bg-white text-xs px-4 py-1 mx-auto -mt-3 rounded-b-xl duration-700 transition-all z-0"
-            [ngClass]="loginPassword.invalid && (loginPassword.dirty || loginPassword.touched) 
-              ? 'translate-y-0 duration-700 transition-all' 
+            [ngClass]="loginPassword.invalid && (loginPassword.dirty || loginPassword.touched)
+              ? 'translate-y-0 duration-700 transition-all'
               : 'invisible -translate-y-10 duration-700 transition-all'"
             >
             <p *ngIf="loginPassword.errors?.['required']">
@@ -70,11 +70,11 @@
           </div>
 
           <!-- submit button -->
-          <button 
+          <button
             class="my-2"
             type="submit"
             [disabled]="loginForm.invalid"
-            [ngClass]="loginForm.valid ? 'btn-primary w-full' : 'btn-disabled'"
+            [ngClass]="loginForm.valid ? 'btn-primary w-full' : 'btn-disabled w-full'"
             >
             Sign In
           </button>
@@ -84,17 +84,17 @@
           </p>
 
           <!-- signin with google btn -->
-          <button 
+          <button
             class='bg-white flex gap-2 justify-center items-center p-2 w-fit rounded mx-auto'
             (click)="signInWithGoogle()"
             type="button">
-            <img 
-              src="https://api.iconify.design/flat-color-icons/google.svg" 
-              alt="google" 
+            <img
+              src="https://api.iconify.design/flat-color-icons/google.svg"
+              alt="google"
               class="w-[40px] inline-block"
               >
             <p class='text-black'>Google</p>
-          </button>              
+          </button>
 
           <p class='py-8'>
             <span class='text-blanchedAlmond/30'>
@@ -108,5 +108,5 @@
       </div>
     </div>
   </div>
-  
+
 </div>
