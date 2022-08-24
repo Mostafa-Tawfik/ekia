@@ -32,6 +32,7 @@ export class ProductCardComponent implements OnInit {
 
   // check if product already in wishlist
   checkInWishlist(productId: number) {
+    this.wishlistService.getWishlist()
     return this.wishlistService.checkInWishlist(productId)
   }
 
