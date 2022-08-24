@@ -29,11 +29,10 @@
             required
             >
 
+          <!-- email validation -->
           <div
-            class="w-fit text-red-600 bg-white text-xs px-4 py-1 mx-auto -mt-3 rounded-b-xl duration-700 transition-all z-0"
-            [ngClass]="signInEmail.invalid && (signInEmail.dirty || signInEmail.touched)
-              ? 'translate-y-0 duration-700 transition-all'
-              : 'invisible -translate-y-10 duration-700 transition-all'"
+            *ngIf="signInEmail.invalid && (signInEmail.dirty || signInEmail.touched)"
+            class="w-fit text-red-600 bg-white text-xs px-4 -mt-2 py-1 mx-auto rounded-b-xl animate-bounce-short"
             >
             <p *ngIf="signInEmail.errors?.['required']">
               Email is required
@@ -56,11 +55,10 @@
             minlength="6"
             />
 
+          <!-- password validation -->
           <div
-            class="w-fit text-red-600 bg-white text-xs px-4 py-1 mx-auto -mt-3 rounded-b-xl duration-700 transition-all z-0"
-            [ngClass]="signUpPassword.invalid && (signUpPassword.dirty || signUpPassword.touched)
-              ? 'translate-y-0 duration-700 transition-all'
-              : 'invisible -translate-y-10 duration-700 transition-all'"
+            *ngIf="signUpPassword.invalid && (signUpPassword.dirty || signUpPassword.touched)"
+            class="w-fit text-red-600 bg-white text-xs px-4 -mt-2 py-1 mx-auto rounded-b-xl animate-bounce-short"
             >
             <p *ngIf="signUpPassword.errors?.['required']">
               Password is required

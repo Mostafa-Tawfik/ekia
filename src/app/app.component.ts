@@ -14,6 +14,6 @@ export class AppComponent {
   ngOnInit(): void {
     setTimeout(() => {
       this.splashActive = false
-    }, 3500);
+    }, 3000);
   }
 }

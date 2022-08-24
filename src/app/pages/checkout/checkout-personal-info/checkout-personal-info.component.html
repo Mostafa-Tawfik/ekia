@@ -20,6 +20,7 @@
           First name
         </label>
         <input
+          #firstName="ngModel"
           [(ngModel)]="personalInfo.firstName"
           (ngModelChange)="setPersonalInfo()"
           id="firstName"
@@ -27,8 +28,19 @@
           name="firstName"
           required
           autocomplete
-          class="text-black rounded-3xl w-full p-4">
+          class="text-black rounded-3xl w-full p-4"
+          >
+        <!-- First name validation -->
+        <div
+          *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)"
+          class="w-fit text-red-600 bg-white text-xs px-4 py-1 mx-auto rounded-b-xl animate-bounce-short"
+          >
+          <p *ngIf="firstName.errors?.['required']">
+            First name is required
+          </p>
+        </div>
       </div>
+
 
       <!-- last name -->
       <div class="w-full">
@@ -36,6 +48,7 @@
           Last name
         </label>
         <input
+          #lastName="ngModel"
           [(ngModel)]="personalInfo.lastName"
           (ngModelChange)="setPersonalInfo()"
           id="lastName"
@@ -43,7 +56,18 @@
           name="lastName"
           required
           autocomplete
-          class="text-black rounded-3xl w-full p-4">
+          class="text-black rounded-3xl w-full p-4"
+          >
+
+        <!-- Last name validation -->
+        <div
+          *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)"
+          class="w-fit text-red-600 bg-white text-xs px-4 py-1 mx-auto rounded-b-xl animate-bounce-short"
+          >
+          <p *ngIf="lastName.errors?.['required']">
+            Last name is required
+          </p>
+        </div>
       </div>
     </div>
 
@@ -54,14 +78,30 @@
           Email
         </label>
         <input
+          #email="ngModel"
           [(ngModel)]="personalInfo.email"
           (ngModelChange)="setPersonalInfo()"
           id="email"
           type="text"
           name="email"
+          email
           required
           autocomplete
-          class="text-black rounded-3xl w-full p-4">
+          class="text-black rounded-3xl w-full p-4 z-10"
+          >
+
+        <!-- email validation -->
+        <div
+          *ngIf="email.invalid && (email.dirty || email.touched)"
+          class="w-fit text-red-600 bg-white text-xs px-4 py-1 mx-auto rounded-b-xl animate-bounce-short"
+          >
+          <p *ngIf="email.errors?.['required']">
+            Email is required
+          </p>
+          <p *ngIf="email.errors?.['email']">
+            Please enter a vaild email
+          </p>
+        </div>
       </div>
 
       <!-- mobile -->
@@ -70,6 +110,7 @@
           Mobile number
         </label>
         <input
+          #mobile="ngModel"
           [(ngModel)]="personalInfo.mobile"
           (ngModelChange)="setPersonalInfo()"
           id="mobile"
@@ -77,7 +118,22 @@
           name="mobile"
           required
           autocomplete
-          class="text-black rounded-3xl w-full p-4">
+          minlength="11"
+          class="text-black rounded-3xl w-full p-4"
+          >
+
+        <!-- mobile validation -->
+        <div
+          *ngIf="mobile.invalid && (mobile.dirty || mobile.touched)"
+          class="w-fit text-red-600 bg-white text-xs px-4 py-1 mx-auto rounded-b-xl animate-bounce-short"
+          >
+          <p *ngIf="mobile.errors?.['required']">
+            Mobile number is required
+          </p>
+          <p *ngIf="mobile.errors?.['minlength']">
+            Must contain at least 11 numbers
+          </p>
+        </div>
       </div>
     </div>
 

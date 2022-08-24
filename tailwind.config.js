@@ -20,6 +20,7 @@ module.exports = {
         icon: "0px 0px 0px 8px rgb(207,163,100)",
       },
       animation: {
+        'bounce-short': 'bounce 1s ease-in-out 1.5',
         'spin-fast': 'spin 0.7s linear infinite',
         fade: 'fadeOut 2s ease-in-out',
         pulseFast: 'pulseFast 0.7s linear'

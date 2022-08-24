@@ -19,6 +19,7 @@
         Address
       </label>
       <textarea
+        #address="ngModel"
         [(ngModel)]="shippmentDetails.address"
         (ngModelChange)="setShippmentDetails()"
         [disabled]="!isPersonalInfoValid"
@@ -30,6 +31,16 @@
         autocomplete
         maxlength="150"
         class="text-black rounded-3xl w-full p-4"></textarea>
+
+      <!-- address validation -->
+      <div
+        *ngIf="address.invalid && (address.dirty || address.touched)"
+        class="w-fit text-red-600 bg-white text-xs -mt-2 px-4 py-1 mx-auto rounded-b-xl animate-bounce-short"
+        >
+        <p *ngIf="address.errors?.['required']">
+          Address is required
+        </p>
+      </div>
     </div>
 
     <div class="flex flex-col sm:mb-4 sm:flex-row gap-2 sm:gap-8">
@@ -39,6 +50,7 @@
           City
         </label>
         <input
+          #city="ngModel"
           [(ngModel)]="shippmentDetails.city"
           (ngModelChange)="setShippmentDetails()"
           [disabled]="!isPersonalInfoValid"
@@ -47,7 +59,17 @@
           name="city"
           required
           autocomplete
-          class="text-black rounded-3xl w-full p-4">
+          class="text-black rounded-3xl w-full p-4"
+          >
+        <!-- city validation -->
+        <div
+          *ngIf="city.invalid && (city.dirty || city.touched)"
+          class="w-fit text-red-600 bg-white text-xs px-4 py-1 mx-auto rounded-b-xl animate-bounce-short"
+          >
+          <p *ngIf="city.errors?.['required']">
+            City is required
+          </p>
+        </div>
       </div>
 
       <!-- Postal Code -->
@@ -56,6 +78,7 @@
           Postal Code
         </label>
         <input
+          #postalCode="ngModel"
           [(ngModel)]="shippmentDetails.postalCode"
           (ngModelChange)="setShippmentDetails()"
           [disabled]="!isPersonalInfoValid"
@@ -64,7 +87,18 @@
           name="postalCode"
           required
           autocomplete
-          class="text-black rounded-3xl w-full p-4">
+          class="text-black rounded-3xl w-full p-4"
+          >
+
+        <!-- city validation -->
+        <div
+          *ngIf="postalCode.invalid && (postalCode.dirty || postalCode.touched)"
+          class="w-fit text-red-600 bg-white text-xs px-4 py-1 mx-auto rounded-b-xl animate-bounce-short"
+          >
+          <p *ngIf="postalCode.errors?.['required']">
+            Postal code is required
+          </p>
+        </div>
       </div>
     </div>
 

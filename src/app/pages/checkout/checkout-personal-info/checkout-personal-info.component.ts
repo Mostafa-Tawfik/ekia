@@ -11,7 +11,7 @@ export class CheckoutPersonalInfoComponent implements OnInit {
     'firstName':  '',
     'lastName': '',
     'email':  '',
-    'mobile': 0
+    'mobile': ''
   }
 
   constructor(
