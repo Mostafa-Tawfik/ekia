@@ -9,20 +9,19 @@ export class FooterService {
   constructor() { }
 
   externalLinks: Footer[] = [
-    { 
+    {
       linksTitle: 'Useful Links',
       linksInfo: [
         { path: '' , title: 'Home' },
         { path: 'products', title: 'Products' },
         { path: 'about', title: 'About EKIA' },
-        { path: 'contact', title: 'Contact us' },
       ]
     },
 
     {
       linksTitle: 'Quick Links',
       linksInfo: [
-        { path: '/account/orders' , title: 'My Orders' },
+        { path: '/account' , title: 'My Orders' },
         { path: '/wishlist', title: 'My Wishlist' },
         { path: '/account', title: 'My Account' },
         { path: '', title: 'Terms of use' },
