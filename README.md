@@ -55,6 +55,7 @@ https://ekia-9249e.web.app/
 - [x] Bottom nav bar for mobile screens
 - [x] Open Graph meta data for social media
 - [x] Lazy loading for bigger size modules
+- [x] A splash screen to show when the app starts
 - [ ] Add dark/light themes
 - [ ] Add user account page
 - [ ] Add search query mechanism
