@@ -1,17 +1,23 @@
-<main class="relative w-full h-full">
-  
+<!-- splash screen shown for 3 sec -->
+<app-splash *ngIf="splashActive"></app-splash>
+
+<!-- main app shows after the splash screen disappeared -->
+<main *ngIf="!splashActive" class="relative w-full h-full">
+
   <app-alert></app-alert>
 
-  <img 
-    src="https://i.ibb.co/zxPBHnf/pattern1.png" 
-    alt="bg" 
-    class="absolute w-full h-full opacity-30 -z-10 mix-blend-multiply bg-blanchedAlmond">
-  
+  <img
+    src="https://i.ibb.co/zxPBHnf/pattern1.png"
+    alt="bg"
+    class="absolute w-full h-full opacity-30 -z-10 mix-blend-multiply bg-blanchedAlmond"
+    >
+
   <app-header></app-header>
-  
+
   <router-outlet></router-outlet>
-  
+
   <app-footer></app-footer>
-  
+
   <app-mobile-nav></app-mobile-nav>
+
 </main>

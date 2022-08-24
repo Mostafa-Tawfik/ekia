@@ -1,4 +1,4 @@
-/** @type {import('tailwindcss').Config} */ 
+/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
     "./src/**/*.{html,ts}",
@@ -21,13 +21,13 @@ module.exports = {
       },
       animation: {
         'spin-fast': 'spin 0.7s linear infinite',
-        wiggle: 'wiggle 1s ease-in-out infinite',
+        fade: 'fadeOut 2s ease-in-out',
         pulseFast: 'pulseFast 0.7s linear'
       },
       keyframes: {
-        wiggle: {
-          '0%, 100%': { transform: 'rotate(-3deg)' },
-          '50%': { transform: 'rotate(3deg)' },
+        fadeOut: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '100' },
         },
         pulseFast: {
           '0%': { opacity: 1},

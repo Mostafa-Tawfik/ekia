@@ -6,6 +6,7 @@ import { HeaderComponent } from './header/header.component';
 import { SharedModule } from '../shared/shared.module';
 import { MobileNavComponent } from './mobile-nav/mobile-nav.component';
 import { RouterModule } from '@angular/router';
+import { SplashComponent } from './splash/splash.component';
 
 
 
@@ -13,7 +14,8 @@ import { RouterModule } from '@angular/router';
   declarations: [
     FooterComponent,
     HeaderComponent,
-    MobileNavComponent
+    MobileNavComponent,
+    SplashComponent,
   ],
   imports: [
     CommonModule,
@@ -23,7 +25,8 @@ import { RouterModule } from '@angular/router';
   exports: [
     FooterComponent,
     HeaderComponent,
-    MobileNavComponent
+    MobileNavComponent,
+    SplashComponent
   ]
 })
 export class LayoutModule {}

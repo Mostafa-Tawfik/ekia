@@ -7,4 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ekia';
+
+  // control the splash screen
+  splashActive: boolean = true
+
+  ngOnInit(): void {
+    setTimeout(() => {
+      this.splashActive = false
+    }, 3500);
+  }
 }
