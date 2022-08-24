@@ -1,12 +1,14 @@
 <div class="sm:hidden fixed bottom-0 w-full h-[70px] bg-goldenBrown px-0 ">
   <ul class="w-[350px] h-[70px] relative flex mx-auto my-auto">
 
-    <li 
-      *ngFor="let navItem of mobileNavItems" 
-      class="w-[70px] h-[70px] my-auto"
+    <li
+      *ngFor="let navItem of mobileNavItems; last as isLast"
+      class="relative w-[70px] h-[70px] my-auto"
       >
-      <div 
-        [routerLink]="navItem.path" 
+      <!-- render all the icon execpte the last one "cart icon" -->
+      <div
+        *ngIf="!isLast"
+        [routerLink]="navItem.path"
         routerLinkActive="icon-animate border-4 -translate-y-4"
         class="w-[70px] h-[70px] flex flex-col text-center justify-center items-center text-white cursor-pointer rounded-full"
         >
@@ -14,12 +16,39 @@
         <span class='text-xl cursor-pointer duration-500 z-50'>
           <fa-icon [icon]="navItem.icon" size="lg"></fa-icon>
         </span>
-        
+
         <p class="text-xs">
           {{ navItem.name }}
         </p>
 
       </div>
+
+      <!-- render the cart icon only -->
+      <div
+        *ngIf="isLast"
+        [routerLink]="navItem.path"
+        routerLinkActive="icon-animate border-4 -translate-y-4"
+        class="w-[70px] h-[70px] flex flex-col text-center justify-center items-center text-white cursor-pointer rounded-full"
+        >
+
+        <span class='text-xl cursor-pointer duration-500 z-50'>
+          <fa-icon [icon]="navItem.icon" size="lg"></fa-icon>
+        </span>
+
+        <p class="text-xs">
+          {{ navItem.name }}
+        </p>
+
+        <!-- the cart counter -->
+        <div
+          *ngIf="isLast && cartCount"
+          class="absolute top-0 right-0 bg-white text-red-600 font-bold w-[22px] h-[22px] rounded-3xl flex justify-center items-center">
+          <p>
+            {{ cartCount }}
+          </p>
+        </div>
+      </div>
+
     </li>
   </ul>
 </div>

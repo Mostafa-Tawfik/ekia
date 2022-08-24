@@ -13,20 +13,20 @@ export class MobileNavService {
   ) {}
 
   mobileNavItems: MobileNav[] = [
-    { 
-      name: "Home", icon: 'house', path: 'home' 
+    {
+      name: "Home", icon: 'house', path: 'home'
     },
-    { 
+    {
       name: "Products", icon: 'couch', path: 'products'
     },
-    { 
-      name: "Search", icon: 'magnifying-glass', path: 'search' 
+    {
+      name: "Account", icon: 'user', path: this.checkUser()
     },
-    { 
-      name: "Account", icon: 'user', path: this.checkUser() 
+    {
+      name: "Wishlist", icon: 'heart', path: 'wishlist'
     },
-    { 
-      name: "Cart", icon: 'cart-shopping', path: 'cart' 
+    {
+      name: "Cart", icon: 'cart-shopping', path: 'cart'
     },
   ]
 
@@ -35,6 +35,6 @@ export class MobileNavService {
       return '/account'
     } else {
       return '/signin'
-    } 
+    }
   }
 }

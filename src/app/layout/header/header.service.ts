@@ -13,22 +13,22 @@ export class HeaderService {
   ) { }
 
   navItems: NavItems[] = [
-    { 
-      path: '', title: 'Home' 
+    {
+      path: '', title: 'Home'
     },
-    { 
-      path: 'products', title: 'Products' 
+    {
+      path: 'products', title: 'Products'
     },
-    { 
-      path: 'about', title: 'About EKIA' 
+    {
+      path: 'about', title: 'About EKIA'
     },
   ]
 
   navIcons: MobileNav[] = [
     {
-      name: 'search',
-      path: 'search',
-      icon: 'magnifying-glass'
+      name: 'products',
+      path: 'products',
+      icon: 'couch'
     },
     {
       name: 'account',
@@ -52,6 +52,6 @@ export class HeaderService {
       return '/account'
     } else {
       return '/signin'
-    } 
+    }
   }
 }
