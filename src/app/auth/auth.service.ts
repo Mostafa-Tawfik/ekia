@@ -18,7 +18,7 @@ import { Subject } from 'rxjs'
   providedIn: 'root'
 })
 export class AuthService {
-  
+
   constructor(
     public auth: Auth,
     private router: Router,
@@ -26,13 +26,13 @@ export class AuthService {
     public firestore: FirestoreService,
     public alertService: AlertService
     ) {}
-    
+
   // init the user by checking on local storage
   currentUser: any = this.loadTheUser()
 
   // a subject to pass as observable
   currentUser$: Subject<any> = new Subject<any>()
-  
+
 
 
   // save the user data into local storage
@@ -48,7 +48,7 @@ export class AuthService {
   // get the lastest version of the cart
   getCurrentUser() {
     this.currentUser = this.loadTheUser()
-    this.currentUser$.next(this.loadTheUser())
+    this.currentUser$.next(this.currentUser)
     return this.currentUser
   }
 
