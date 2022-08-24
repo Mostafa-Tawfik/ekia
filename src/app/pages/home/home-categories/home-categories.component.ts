@@ -8,7 +8,7 @@ import { Category } from 'src/app/models/category';
 export class HomeCategoriesComponent implements OnInit {
   @Input() category: Category
 
-  constructor() { 
+  constructor() {
     this.category = {
       id: 1,
       name: '',

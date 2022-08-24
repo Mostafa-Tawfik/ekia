@@ -5,6 +5,7 @@ import { ProductsComponent } from './products.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { ProductsRoutingModule } from './products-routing.module';
+import { ProductsFilterBtnComponent } from './products-filter-btn/products-filter-btn.component';
 
 
 
@@ -12,6 +13,7 @@ import { ProductsRoutingModule } from './products-routing.module';
   declarations: [
     ProductsComponent,
     ProductDetailsComponent,
+    ProductsFilterBtnComponent,
   ],
   imports: [
     CommonModule,
