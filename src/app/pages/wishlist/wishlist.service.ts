@@ -43,11 +43,7 @@ export class WishlistService {
 
   // check if the product already in the wishlist
   checkInWishlist(productId: number): boolean {
-    if(this.currentUser.email) {
-      return this.wishlistProducts.map((i: Product) => i.id).includes(productId)
-    } else {
-      return false
-    }
+    return this.wishlistProducts.map((i: Product) => i.id).includes(productId)
   }
 
   // add to wishlist
