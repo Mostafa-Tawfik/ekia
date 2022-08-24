@@ -1,34 +1,52 @@
-<a 
-  [routerLink]="['/products', item.id]" 
-  class="w-36 h-52 sm:w-52 sm:h-72 bg-gradient-to-r from-blanchedAlmond to-earthYellow/20 p-4 flex flex-col items-center justify-center rounded-2xl cursor-pointer shadow-[0px_5px_5px] shadow-goldenBrown/30 drop-shadow-2xl hover:scale-105 duration-300"
-  >
+<section class="w-36 h-52 sm:w-52 sm:h-72 bg-gradient-to-r from-blanchedAlmond to-earthYellow/20 p-4 flex flex-col items-center justify-center rounded-2xl cursor-pointer shadow-[0px_5px_5px] shadow-goldenBrown/30 drop-shadow-2xl hover:scale-105 duration-300">
 
-  <!-- img for mobile -->
-  <img 
-    src="{{imgBaseUrl}}/w_112/{{item.img}}" 
-    [alt]="item.name" 
-    class="w-36 h-20 sm:hidden object-contain"
-    >
+  <a [routerLink]="['/products', item.id]">
+    <!-- img for mobile -->
+    <img
+      src="{{imgBaseUrl}}/w_112/{{item.img}}"
+      [alt]="item.name"
+      class="w-36 h-20 sm:hidden object-contain"
+      >
 
-  <!-- img for big screens -->
-  <img 
-    src="{{imgBaseUrl}}/w_176/{{item.img}}" 
-    [alt]="item.name" 
-    class="hidden w-52 h-32 sm:block object-contain"
-    >
+    <!-- img for big screens -->
+    <img
+      src="{{imgBaseUrl}}/w_176/{{item.img}}"
+      [alt]="item.name"
+      class="hidden w-52 h-32 sm:block object-contain"
+      >
 
-  <div>
-    <p class="text-lg text-bdazzledBlue font-extrabold">
-      {{ item.name }}
-    </p>
+    <div>
+      <p class="text-lg text-bdazzledBlue font-extrabold">
+        {{ item.name }}
+      </p>
 
-    <p class="text-[8px] sm:text-[10px] text-goldenBrown my-2">{{item.desc.substr(0, 80)}}</p>
+      <p class="text-[8px] sm:text-[10px] text-goldenBrown my-2">{{item.desc.substr(0, 80)}}</p>
 
-    <p class="text-sm">
-      <span class="text-xs">
-        EGP
-      </span>
-      {{ item.price }}
-    </p>
-  </div>
-</a>
+      <p class="text-sm">
+        <span class="text-xs">
+          EGP
+        </span>
+        {{ item.price }}
+      </p>
+    </div>
+  </a>
+
+  <!-- add to wishlist -->
+  <button
+    *ngIf="checkInWishlist(item.id)"
+    (click)="removeFromWishlist(item)">
+    <img
+      src="https://api.iconify.design/ant-design/heart-filled.svg?color=%23336996" alt="/"
+      class="absolute bottom-2 sm:top-2 right-2 w-[30px] cursor-pointer text-bdazzledBlue hover:scale-110 hover:saturate-200 duration-300 motion-safe:hover:animate-spin-fast">
+  </button>
+
+  <!-- remove form wishlist -->
+  <button
+    *ngIf="!checkInWishlist(item.id)"
+    (click)="addToWishlist(item)">
+    <img
+      src="https://api.iconify.design/ant-design/heart-outlined.svg?color=%23336996" alt="/"
+      class="absolute bottom-2 sm:top-2 right-2 w-[30px] cursor-pointer text-bdazzledBlue hover:scale-110 hover:saturate-200 duration-300 motion-safe:hover:animate-spin-fast">
+  </button>
+
+</section>
